@@ -49,6 +49,7 @@ return array(
 			'urlFormat'=>'path',
 			'rules'=>array(
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+                'admin/<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
 		),
 		'log'=>array(
