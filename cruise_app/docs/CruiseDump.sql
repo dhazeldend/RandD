@@ -1,5 +1,78 @@
+CREATE DATABASE  IF NOT EXISTS `cruise` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `cruise`;
+-- MySQL dump 10.13  Distrib 5.6.13, for osx10.6 (i386)
+--
+-- Host: 85.10.213.91    Database: cruise
+-- ------------------------------------------------------
+-- Server version	5.5.35-0+wheezy1
 
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `cabins`
+--
+
+DROP TABLE IF EXISTS `cabins`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cabins` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ship_id` int(11) NOT NULL,
+  `code` varchar(45) DEFAULT NULL,
+  `description` varchar(2000) DEFAULT NULL,
+  `passengers` int(11) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `cruise_lines`
+--
+
+DROP TABLE IF EXISTS `cruise_lines`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cruise_lines` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `code` varchar(45) DEFAULT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `url` varchar(100) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `itineraries`
+--
+
+DROP TABLE IF EXISTS `itineraries`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `itineraries` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ship_id` int(11) DEFAULT NULL,
+  `route_id` int(11) DEFAULT NULL,
+  `code` varchar(45) DEFAULT NULL,
+  `start_date` datetime DEFAULT NULL,
+  `end_date` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `permissions`
@@ -15,6 +88,43 @@ CREATE TABLE `permissions` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `name_UNIQUE` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `ports`
+--
+
+DROP TABLE IF EXISTS `ports`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ports` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(200) DEFAULT NULL,
+  `code` varchar(3) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `pricing`
+--
+
+DROP TABLE IF EXISTS `pricing`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `pricing` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `itinerary_id` int(11) DEFAULT NULL,
+  `cabin_id` int(11) DEFAULT NULL,
+  `cabin_fare` float DEFAULT NULL,
+  `port_charge` float DEFAULT NULL,
+  `service_fee` float DEFAULT NULL,
+  `insurance` float DEFAULT NULL,
+  `special` int(11) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -69,17 +179,42 @@ CREATE TABLE `roles_roles` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Table structure for table `user_publications`
+-- Table structure for table `routes`
 --
 
-DROP TABLE IF EXISTS `user_publications`;
+DROP TABLE IF EXISTS `routes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `user_publications` (
-  `user_id` int(11) NOT NULL,
-  `publication_id` varchar(20) NOT NULL DEFAULT '',
-  PRIMARY KEY (`user_id`,`publication_id`),
-  CONSTRAINT `fk_user_publications_users_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
+CREATE TABLE `routes` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `start_port_id` int(11) DEFAULT NULL,
+  `end_port_id` int(11) DEFAULT NULL,
+  `duration` int(11) DEFAULT NULL,
+  `port_of_call` varchar(500) DEFAULT NULL,
+  `area` varchar(100) DEFAULT NULL,
+  `url` varchar(200) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `ships`
+--
+
+DROP TABLE IF EXISTS `ships`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ships` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `cruise_id` int(11) NOT NULL,
+  `name` varchar(100) DEFAULT NULL,
+  `code` varchar(45) DEFAULT NULL,
+  `url` varchar(100) DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -116,7 +251,7 @@ CREATE TABLE `users` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping routines for database 'redactor_users'
+-- Dumping routines for database 'cruise'
 --
 /*!50003 DROP PROCEDURE IF EXISTS `sp_hasaccess` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
@@ -128,7 +263,7 @@ CREATE TABLE `users` (
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = '' */ ;
 DELIMITER ;;
-CREATE DEFINER=`redactor`@`%` PROCEDURE `sp_hasaccess`(in user_id int, in operation varchar(50))
+CREATE DEFINER=`richaf_13`@`%` PROCEDURE `sp_hasaccess`(in user_id int, in operation varchar(50))
 BEGIN
 
 set @role_id    =   (select role_id from users where id = user_id);
@@ -161,4 +296,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-03-08 10:44:53
+-- Dump completed on 2014-03-08 13:33:00
