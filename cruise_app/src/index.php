@@ -1,6 +1,4 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 $global=dirname(__FILE__).'/global.php';
 $yii=dirname(__FILE__).'/protected/packages/yii/framework/yii.php';
 $config=dirname(__FILE__).'/protected/config/main.php';
