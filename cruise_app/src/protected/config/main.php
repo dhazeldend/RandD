@@ -23,17 +23,20 @@ return array(
 	// application components
 	'components'=>array(
 		'user'=>array(
-			// enable cookie-based authentication
-			'allowAutoLogin'=>true,
-		),
+            // enable cookie-based authentication
+            'class'=>'CustomWebUser',
+            'allowAutoLogin'=>true,
+            'loginUrl' => '/account/login',
+            'stateKeyPrefix' => 'redactor',
+        ),
 	
 		// uncomment the following to use a MySQL database
 		
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=cruise',
 			'emulatePrepare' => true,
-			'username' => 'root',
-			'password' => '',
+			'username' => 'richaf_13',
+			'password' => 'EbNWHNe8',
 			'charset' => 'utf8',
 			'tablePrefix' => '',
 		),
