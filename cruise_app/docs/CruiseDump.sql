@@ -263,7 +263,7 @@ CREATE TABLE `users` (
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = '' */ ;
 DELIMITER ;;
-CREATE DEFINER=`richaf_13`@`%` PROCEDURE `sp_hasaccess`(in user_id int, in operation varchar(50))
+CREATE PROCEDURE `sp_hasaccess`(in user_id int, in operation varchar(50))
 BEGIN
 
 set @role_id    =   (select role_id from users where id = user_id);

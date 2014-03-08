@@ -35,8 +35,8 @@ return array(
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=cruise',
 			'emulatePrepare' => true,
-			'username' => 'richaf_13',
-			'password' => 'EbNWHNe8',
+			'username' => 'root',
+			'password' => 'root',
 			'charset' => 'utf8',
 			'tablePrefix' => '',
 		),

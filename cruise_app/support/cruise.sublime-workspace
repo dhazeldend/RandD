@@ -472,6 +472,7 @@
 	},
 	"file_history":
 	[
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/support/app.sublime-project",
 		"/Users/dylan.roux/Workspace/apps/cruise/README.md",
 		"/Users/dylan.roux/Workspace/apps/cruise/src/framework/modules/webapp/views/layouts/main.php",
 		"/Users/dylan.roux/Workspace/apps/cruise/src/framework/modules/webapp/assets/css/site.css",
@@ -598,8 +599,7 @@
 		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/components/img/Img.php",
 		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/assets/js/widgets/article.bodyedit.js",
 		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/assets/js/widgets/article.introedit.js",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/assets/js/widgets/article.relatededit.js",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/assets/js/_old_article-init.js"
+		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/assets/js/widgets/article.relatededit.js"
 	],
 	"find":
 	{
