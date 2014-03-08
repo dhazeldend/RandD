@@ -29,9 +29,17 @@ return array(
             'loginUrl' => '/account/login',
             'stateKeyPrefix' => 'redactor',
         ),
-	
+	   'log'=>array(
+                'class'=>'CLogRouter',
+                'routes'=>array(
+                    array(
+                        'class'=>'CFileLogRoute',
+                        'levels'=>'error, warning, info',
+                        'logPath'=>'/var/log/cruis/',                        
+                        'logFile'=>'cruise.application.log',
+                        'except' => 'system.cruise.activities',
+                    ),
 		// uncomment the following to use a MySQL database
-		
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=cruise',
 			'emulatePrepare' => true,
