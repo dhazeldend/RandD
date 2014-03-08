@@ -1,0 +1,1 @@
+rsync --delete -a ~/Workspace/apps/RandD/cruise_app/ ubuntu@randd.local:~/apps/cruise
