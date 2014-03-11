@@ -472,6 +472,12 @@
 	},
 	"file_history":
 	[
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/docs/deploy.txt",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/config/main.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/layouts/main.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/site/error.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/packages/yii/demos/blog/protected/views/site/error.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/php_info.php",
 		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/support/app.sublime-project",
 		"/Users/dylan.roux/Workspace/apps/cruise/README.md",
 		"/Users/dylan.roux/Workspace/apps/cruise/src/framework/modules/webapp/views/layouts/main.php",
@@ -593,13 +599,7 @@
 		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/webapp/components/article/Blckquote.php",
 		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/components/article/views/story_edit.php",
 		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/webapp/assets/js/new/base.config.js",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/components/article/views/soundcloud_edit.php",
-		"/Users/dylan.roux/Downloads/58-simple-switch/58-simple-switch/css/style.css",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/components/Imager.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/components/img/Img.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/assets/js/widgets/article.bodyedit.js",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/assets/js/widgets/article.introedit.js",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/assets/js/widgets/article.relatededit.js"
+		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/components/article/views/soundcloud_edit.php"
 	],
 	"find":
 	{
@@ -918,6 +918,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 313.0,
+	"side_bar_width": 237.0,
 	"status_bar_visible": true
 }
