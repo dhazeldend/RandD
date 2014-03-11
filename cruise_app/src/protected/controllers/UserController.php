@@ -22,28 +22,14 @@ class UserController extends AdminBaseController {
         );
     }
     
-	/**
-     * beforeAction - logic to run before any event
-     */
-    public function beforeAction($action){
-        // check user is logged in 
-        if (Yii::app()->user->isGuest) {
-            if (Yii::app()->request->isAjaxRequest) {
-                // Set the return url to the home page when your authenticated session expires and an ajax request is made
-                // This prevents redirect loop.
-                Yii::app()->user->returnUrl = "/";
-                
-                // raise an error to show that the user is logged out.                    
-                throw new CHttpException(401, "You are not authorized to perform this action.");
-            } else {
-                // redirect to the login screen.
-                Yii::app()->controller->redirect(Yii::app()->user->loginUrl);
-            }               
-        }
+	// /**
+ //     * beforeAction - logic to run before any event
+ //     */
+ //    public function beforeAction($action){
         
-        // The action was successful
-        return true;
-    }
+ //        // The action was successful
+ //        return true;
+ //    }
 
     /**
 	 * Displays a particular model.

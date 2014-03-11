@@ -20,15 +20,15 @@
         ?>
         <div id="mainmenu">
             <ul class="centered">
+                <?php if (!Yii::app()->user->isGuest) { ?>
+                    <li <?php if($controller == 'site'): ?>class="active"<?php endif; ?> ><a href="/">HOME</a></li>
+                    <li <?php if($controller == 'user'): ?>class="active"<?php endif; ?> ><a href="/user">USERS</a></li>
+                    <li <?php if($controller == 'role'): ?>class="active"<?php endif; ?> ><a href="/role">ROLES & PERMISSIONS</a></li>
 
-                <li <?php if($controller == 'site'): ?>class="active"<?php endif; ?> ><a href="/">HOME</a></li>
-                <li <?php if($controller == 'user'): ?>class="active"<?php endif; ?> ><a href="/user">USERS</a></li>
-                <li <?php if($controller == 'role'): ?>class="active"<?php endif; ?> ><a href="/role">ROLES & PERMISSIONS</a></li>
-
-                <li id="user">
-
-                    CRUISE ADMIN | <?php echo Yii::app()->user->name ?>
-                </li>
+                    <li id="user">
+                        CRUISE ADMIN : <?php echo Yii::app()->user->name ?>
+                    </li>
+                <?php } ?>
             </ul>
         </div> <!-- mainmenu -->
 
