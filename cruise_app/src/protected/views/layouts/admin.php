@@ -15,15 +15,12 @@
          * Render the main menu
          *
          */
-        $controller = Yii::app()->controller->getId();
-
         ?>
         <div id="mainmenu">
             <ul class="centered">
                 <?php if (!Yii::app()->user->isGuest) { ?>
-                    <li <?php if($controller == 'site'): ?>class="active"<?php endif; ?> ><a href="/">HOME</a></li>
-                    <li <?php if($controller == 'user'): ?>class="active"<?php endif; ?> ><a href="/user">USERS</a></li>
-                    <li <?php if($controller == 'role'): ?>class="active"<?php endif; ?> ><a href="/role">ROLES & PERMISSIONS</a></li>
+                    <li <?php if($this->controller == 'site'): ?>class="active"<?php endif; ?> ><a href="/">HOME</a></li>
+                    <li <?php if($this->controller == 'user' || $this->controller == 'role'): ?>class="active"<?php endif; ?> ><a href="/user">USERS</a></li>
 
                     <li id="user">
                         CRUISE ADMIN : <?php echo Yii::app()->user->name ?>
@@ -38,8 +35,6 @@
          * was set in the content view.
          *
          */
-        $action = Yii::app()->controller->getAction()->getId();
-        $route = $controller.'/'.$action;
 
         if(!empty($this->menu)): ?>
 
@@ -49,7 +44,7 @@
                     <ul class="nav">
 
                         <?php foreach($this->menu as $item): ?>
-                        <li <?php if($route == $item['url']['route']): ?>class="active"<?php endif; ?> >
+                        <li <?php if($this->route == $item['url']['route']): ?>class="active"<?php endif; ?> >
                             <?php echo CHtml::link($item['label'], array($item['url']['route'])); ?>
                         </li>
                         <?php endforeach; ?>
@@ -66,7 +61,7 @@
 
     <div id="footer">
         <div class="centered">
-            © Media24 News. All rights reserved.
+            © R&D Ops. All rights reserved.
         </div>
     </div> <!-- footer -->
 

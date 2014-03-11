@@ -1,7 +1,3 @@
-<?php $this->menu = array(
-    array('label' => 'List users', 'url' => array('route' => 'user/index')),
-    array('label' => 'Create a user', 'url' => array('route' => 'user/create')));?>
-
 <h3>Create and modify users</h3>
 <h5>select a user to view details.</h5>
 
