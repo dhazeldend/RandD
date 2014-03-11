@@ -1,0 +1,3 @@
+Fabric>=1.4.1
+cuisine>=0.2.4
+pycrypto>=2.6
