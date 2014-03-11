@@ -9,7 +9,7 @@ env.roledefs = {
 }
 
 # Define available webapps - future proof roledefs that aren't webapps
-env.webapps = ['dylan', 'richard']
+env.webapps = ['cruise']
 
 
 

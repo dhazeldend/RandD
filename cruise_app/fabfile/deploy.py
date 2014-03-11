@@ -22,8 +22,8 @@ def framework(pull=False):
     """Push framework updates"""
     role = pickrole(env.webapps, strict=True)
     # rsync Yii framework and shared packages
-        rsync_project(
-            '{}/'.format(env.base),
-            delete=True,
-            ssh_opts='-o StrictHostKeyChecking=no',
-        )
+    rsync_project(
+        '{}/'.format(env.base),
+        delete=True,
+        ssh_opts='-o StrictHostKeyChecking=no',
+    )
