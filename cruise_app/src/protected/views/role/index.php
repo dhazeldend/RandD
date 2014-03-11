@@ -10,6 +10,6 @@
     'searchable' => true,
     'dataProvider' => $dataProvider,
     'columns' => array(
-        array('name'=>'name','template'=>'<a href="/redactor/role/update/<=id>"><=name></a>'),
+        array('name'=>'name','template'=>'<a href="/role/update/<=id>"><=name></a>'),
         array('name'=>'description'),
         array('name'=>'level'))));?>

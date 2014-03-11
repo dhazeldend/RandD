@@ -1,7 +1,7 @@
 <div class="dvform min">
 
     <div class="dvmenu">
-        <a href="/redactor/user/update/<?php echo $model->id; ?>" class="internal">Edit</a> |
+        <a href="/user/update/<?php echo $model->id; ?>" class="internal">Edit</a> |
         <a id="resetPwd">Reset Password</a> |
         <a id="delete">Delete</a>
     </div>

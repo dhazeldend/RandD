@@ -22,12 +22,12 @@
             <ul class="centered">
 
                 <li <?php if($controller == 'site'): ?>class="active"<?php endif; ?> ><a href="/">HOME</a></li>
-                <li <?php if($controller == 'user'): ?>class="active"<?php endif; ?> ><a href="/redactor/user">USERS</a></li>
-                <li <?php if($controller == 'role'): ?>class="active"<?php endif; ?> ><a href="/redactor/role">ROLES & PERMISSIONS</a></li>
+                <li <?php if($controller == 'user'): ?>class="active"<?php endif; ?> ><a href="/user">USERS</a></li>
+                <li <?php if($controller == 'role'): ?>class="active"<?php endif; ?> ><a href="/role">ROLES & PERMISSIONS</a></li>
 
                 <li id="user">
 
-                    REDACTOR ADMIN | <?php echo Yii::app()->user->name ?>
+                    CRUISE ADMIN | <?php echo Yii::app()->user->name ?>
                 </li>
             </ul>
         </div> <!-- mainmenu -->

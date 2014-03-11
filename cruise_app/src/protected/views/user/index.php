@@ -27,7 +27,7 @@
 $(document).on('click', '.editbutton', function() {
     showModal({
         title: $(this).html(),
-        url: '/redactor/user/view/' + $(this).attr('data-id'),
+        url: '/user/view/' + $(this).attr('data-id'),
         submit: function() {
             $.growlUI('User was successfully updated.');
         },

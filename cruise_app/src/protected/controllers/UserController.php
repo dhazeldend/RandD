@@ -69,9 +69,8 @@ class UserController extends AdminBaseController {
             $model->password = md5($model->password);
             $model->repeatpassword = md5($model->repeatpassword);
 			if ($model->save()) {
-                Activities::log(array('detail' => 'created a user', 'create_user_id' => $model->id));
                 Yii::app()->user->setFlash('success', '[User] ' . $model->name . ' was successfully created.');
-                $this->redirect('/redactor/user');
+                $this->redirect('/user');
             }
 		}
 
@@ -97,21 +96,8 @@ class UserController extends AdminBaseController {
             $model->update_user_id = Yii::app()->user->getId();
             $model->update_time = new CDbExpression('CURRENT_TIMESTAMP');
 
-            // delete all the publications for the user
-            UserPublications::model()->deleteAllByAttributes(array('user_id' => $id));
-            // add all the publications to the user
-            // that were selected in the update form.
-            if (isset($_POST['User']['publications'])) {
-                foreach ($_POST['User']['publications'] as $pubId) {
-                    $userPublication = new UserPublications;
-                    $userPublication->user_id = $id;
-                    $userPublication->publication_id = $pubId;
-                    $userPublication->save();
-                }
-            }
-			if($model->save()) {
-                Activities::log(array('detail' => 'updated user details', 'update_user_id' => $id));
-                $this->redirect(array('view','id'=>$model->id));
+			if ($model->save()) {
+                $this->redirect(array('view', 'id'=>$model->id));
             }
 		}
 

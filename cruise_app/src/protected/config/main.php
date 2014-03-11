@@ -58,8 +58,8 @@ return array(
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(
-				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
-                'admin/<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+				// '<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+                '<controller:\w+>/<action:\w+>/<id:\w+>'=>'<controller>/<action>',
 			),
 		),
 		'log'=>array(
