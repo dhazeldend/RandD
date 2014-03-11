@@ -20,7 +20,6 @@ class AccountController extends CController {
             $model->attributes = $_POST['CMSLoginForm'];
             if ($model->validate()) {
                 $model->login();
-                Activities::log();
                 
                 // return json response if this action was called via ajax.
                 if (Yii::app()->request->getParam('ajax')) {
