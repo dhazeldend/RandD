@@ -2,9 +2,9 @@ CREATE DATABASE  IF NOT EXISTS `cruise` /*!40100 DEFAULT CHARACTER SET latin1 */
 USE `cruise`;
 -- MySQL dump 10.13  Distrib 5.6.13, for osx10.6 (i386)
 --
--- Host: 85.10.213.91    Database: cruise
+-- Host: randd.local    Database: cruise
 -- ------------------------------------------------------
--- Server version	5.5.35-0+wheezy1
+-- Server version	5.5.35-0ubuntu0.12.04.2
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -27,14 +27,25 @@ DROP TABLE IF EXISTS `cabins`;
 CREATE TABLE `cabins` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `ship_id` int(11) NOT NULL,
-  `code` varchar(45) DEFAULT NULL,
-  `description` varchar(2000) DEFAULT NULL,
-  `passengers` int(11) DEFAULT NULL,
+  `code` varchar(45) NOT NULL,
+  `description` varchar(2000) NOT NULL,
+  `passengers` int(11) NOT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`)
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  KEY `fk_cabins_ships_idx` (`ship_id`),
+  CONSTRAINT `fk_cabins_ships` FOREIGN KEY (`ship_id`) REFERENCES `ships` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cabins`
+--
+
+LOCK TABLES `cabins` WRITE;
+/*!40000 ALTER TABLE `cabins` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cabins` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `cruise_lines`
@@ -45,14 +56,23 @@ DROP TABLE IF EXISTS `cruise_lines`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cruise_lines` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `code` varchar(45) DEFAULT NULL,
-  `name` varchar(100) DEFAULT NULL,
-  `url` varchar(100) DEFAULT NULL,
+  `code` varchar(45) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `url` varchar(100) NOT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cruise_lines`
+--
+
+LOCK TABLES `cruise_lines` WRITE;
+/*!40000 ALTER TABLE `cruise_lines` DISABLE KEYS */;
+/*!40000 ALTER TABLE `cruise_lines` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `itineraries`
@@ -63,16 +83,29 @@ DROP TABLE IF EXISTS `itineraries`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `itineraries` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `ship_id` int(11) DEFAULT NULL,
-  `route_id` int(11) DEFAULT NULL,
-  `code` varchar(45) DEFAULT NULL,
-  `start_date` datetime DEFAULT NULL,
-  `end_date` datetime DEFAULT NULL,
+  `ship_id` int(11) NOT NULL,
+  `route_id` int(11) NOT NULL,
+  `code` varchar(45) NOT NULL,
+  `start_date` datetime NOT NULL,
+  `end_date` datetime NOT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`)
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  KEY `fk_itineraries_ships_idx` (`ship_id`),
+  KEY `fk_itineraries_routes_idx` (`route_id`),
+  CONSTRAINT `fk_itineraries_ships` FOREIGN KEY (`ship_id`) REFERENCES `ships` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_itineraries_routes` FOREIGN KEY (`route_id`) REFERENCES `routes` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `itineraries`
+--
+
+LOCK TABLES `itineraries` WRITE;
+/*!40000 ALTER TABLE `itineraries` DISABLE KEYS */;
+/*!40000 ALTER TABLE `itineraries` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `permissions`
@@ -87,8 +120,17 @@ CREATE TABLE `permissions` (
   `description` varchar(200) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name_UNIQUE` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `permissions`
+--
+
+LOCK TABLES `permissions` WRITE;
+/*!40000 ALTER TABLE `permissions` DISABLE KEYS */;
+/*!40000 ALTER TABLE `permissions` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `ports`
@@ -98,13 +140,22 @@ DROP TABLE IF EXISTS `ports`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ports` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(200) DEFAULT NULL,
-  `code` varchar(3) DEFAULT NULL,
+  `id` int(11) unsigned NOT NULL,
+  `name` varchar(200) NOT NULL,
+  `code` varchar(3) NOT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ports`
+--
+
+LOCK TABLES `ports` WRITE;
+/*!40000 ALTER TABLE `ports` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ports` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `pricing`
@@ -115,17 +166,30 @@ DROP TABLE IF EXISTS `pricing`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pricing` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `itinerary_id` int(11) DEFAULT NULL,
-  `cabin_id` int(11) DEFAULT NULL,
-  `cabin_fare` float DEFAULT NULL,
-  `port_charge` float DEFAULT NULL,
-  `service_fee` float DEFAULT NULL,
-  `insurance` float DEFAULT NULL,
-  `special` int(11) DEFAULT NULL,
+  `itinerary_id` int(11) NOT NULL,
+  `cabin_id` int(11) NOT NULL,
+  `cabin_fare` float NOT NULL,
+  `port_charge` float NOT NULL,
+  `service_fee` float NOT NULL,
+  `insurance` float NOT NULL,
+  `special` int(11) NOT NULL,
   `modified` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `fk_pricing_cabins_idx` (`cabin_id`),
+  KEY `fk_pricing_itineraries_idx` (`itinerary_id`),
+  CONSTRAINT `fk_pricing_cabins` FOREIGN KEY (`cabin_id`) REFERENCES `cabins` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_pricing_itineraries` FOREIGN KEY (`itinerary_id`) REFERENCES `itineraries` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pricing`
+--
+
+LOCK TABLES `pricing` WRITE;
+/*!40000 ALTER TABLE `pricing` DISABLE KEYS */;
+/*!40000 ALTER TABLE `pricing` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `roles`
@@ -141,8 +205,18 @@ CREATE TABLE `roles` (
   `level` int(11) NOT NULL DEFAULT '999',
   PRIMARY KEY (`id`),
   UNIQUE KEY `name_UNIQUE` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `roles`
+--
+
+LOCK TABLES `roles` WRITE;
+/*!40000 ALTER TABLE `roles` DISABLE KEYS */;
+INSERT INTO `roles` VALUES (1,'admin','tha admin role biatches ;)',999),(2,'Pleb','yes it\'s in the name',999);
+/*!40000 ALTER TABLE `roles` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `roles_permissions`
@@ -162,6 +236,15 @@ CREATE TABLE `roles_permissions` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `roles_permissions`
+--
+
+LOCK TABLES `roles_permissions` WRITE;
+/*!40000 ALTER TABLE `roles_permissions` DISABLE KEYS */;
+/*!40000 ALTER TABLE `roles_permissions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `roles_roles`
 --
 
@@ -179,6 +262,15 @@ CREATE TABLE `roles_roles` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Dumping data for table `roles_roles`
+--
+
+LOCK TABLES `roles_roles` WRITE;
+/*!40000 ALTER TABLE `roles_roles` DISABLE KEYS */;
+/*!40000 ALTER TABLE `roles_roles` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `routes`
 --
 
@@ -187,17 +279,26 @@ DROP TABLE IF EXISTS `routes`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `routes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `start_port_id` int(11) DEFAULT NULL,
-  `end_port_id` int(11) DEFAULT NULL,
-  `duration` int(11) DEFAULT NULL,
-  `port_of_call` varchar(500) DEFAULT NULL,
-  `area` varchar(100) DEFAULT NULL,
-  `url` varchar(200) DEFAULT NULL,
+  `start_port_id` int(11) NOT NULL,
+  `end_port_id` int(11) NOT NULL,
+  `duration` int(11) NOT NULL,
+  `port_of_call` varchar(500) NOT NULL,
+  `area` varchar(100) NOT NULL,
+  `url` varchar(200) NOT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `routes`
+--
+
+LOCK TABLES `routes` WRITE;
+/*!40000 ALTER TABLE `routes` DISABLE KEYS */;
+/*!40000 ALTER TABLE `routes` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `ships`
@@ -209,14 +310,25 @@ DROP TABLE IF EXISTS `ships`;
 CREATE TABLE `ships` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `cruise_id` int(11) NOT NULL,
-  `name` varchar(100) DEFAULT NULL,
-  `code` varchar(45) DEFAULT NULL,
-  `url` varchar(100) DEFAULT NULL,
+  `name` varchar(100) NOT NULL,
+  `code` varchar(45) NOT NULL,
+  `url` varchar(100) NOT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`)
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  KEY `fk_ships_cruise_idx` (`cruise_id`),
+  CONSTRAINT `fk_ships_cruise` FOREIGN KEY (`cruise_id`) REFERENCES `cruise_lines` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ships`
+--
+
+LOCK TABLES `ships` WRITE;
+/*!40000 ALTER TABLE `ships` DISABLE KEYS */;
+/*!40000 ALTER TABLE `ships` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `users`
@@ -247,8 +359,18 @@ CREATE TABLE `users` (
   CONSTRAINT `fk_users_roles_id` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`),
   CONSTRAINT `fk_users_users_create_user_id` FOREIGN KEY (`create_user_id`) REFERENCES `users` (`id`),
   CONSTRAINT `fk_users_users_modify_user_id` FOREIGN KEY (`update_user_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=298 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (5,'admin','21232f297a57a5a743894a0e4a801fc3','admin','1@2.com','admin',1,1,'2014-03-11 21:54:23','2014-03-11 16:47:35','2014-03-11 21:54:28',NULL,5),(6,'dylan','827ccb0eea8a706c4c34a16891f84e7b','Dylan','dg.roux@gmail.com','',1,1,'2014-03-11 21:13:10','2014-03-11 17:02:22','2014-03-11 20:59:57',5,5),(8,'richard','827ccb0eea8a706c4c34a16891f84e7b','Richard','dhazeldend@gmail.com','',1,1,NULL,'2014-03-11 17:04:57','2014-03-11 20:59:07',5,5),(11,'pleb01','827ccb0eea8a706c4c34a16891f84e7b','Pleb01','pleb@gmail.com','test',2,1,NULL,'2014-03-11 21:56:01','2014-03-11 21:56:05',5,5);
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Dumping routines for database 'cruise'
@@ -296,4 +418,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-03-08 13:33:00
+-- Dump completed on 2014-03-12 16:40:05
