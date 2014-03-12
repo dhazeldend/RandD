@@ -71,13 +71,18 @@ return array(
 					'levels'=>'error, warning',
 				),
 				// uncomment the following to show log messages on web pages
-				
 				array(
 					'class'=>'CWebLogRoute',
 				),
-				
 			),
 		),
+        'clientScript' => array(
+            'scriptMap' => array(
+                'jquery.js' => false,
+                'jquery.min.js' => false,
+                'jquery.ba-bbq.min.js' => false,
+            ),
+        ),
 	),
 	'modules'=>array(
         'gii'=>array(
@@ -85,7 +90,7 @@ return array(
             'password'=>'admin',
         ),
     ),
-
+    
 	// application-level parameters that can be accessed
 	// using Yii::app()->params['paramName']
 	'params'=>require(dirname(__FILE__).'/params.php'),

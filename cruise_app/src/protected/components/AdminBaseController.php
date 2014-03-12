@@ -42,7 +42,7 @@ class AdminBaseController extends CController {
         cs()->registerCssFile(asset('/css/admin.css'));
         cs()->registerScriptFile(asset('/js/modalex.js'), CClientScript::POS_END);
         // includes for yii
-        cs()->registerScriptFile('//cdnjs.cloudflare.com/ajax/libs/jquery-browser/0.0.5/jquery.browser.min.js', CClientScript::POS_END);
-        cs()->registerScriptFile('//cdnjs.cloudflare.com/ajax/libs/jquery.ba-bbq/1.2.1/jquery.ba-bbq.min.js', CClientScript::POS_END);
+        cs()->registerScriptFile('//cdnjs.cloudflare.com/ajax/libs/jquery-browser/0.0.5/jquery.browser.min.js?v=1', CClientScript::POS_END);
+        cs()->registerScriptFile('//cdnjs.cloudflare.com/ajax/libs/jquery.ba-bbq/1.2.1/jquery.ba-bbq.min.js?v=1', CClientScript::POS_END);
     }
 }
