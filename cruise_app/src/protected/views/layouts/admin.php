@@ -23,7 +23,7 @@
                     <li <?php if($this->controller == 'user' || $this->controller == 'role'): ?>class="active"<?php endif; ?> ><a href="/user">USERS</a></li>
 
                     <li id="user">
-                        CRUISE ADMIN : <?php echo Yii::app()->user->name ?>
+                        CRUISE ADMIN | <?php echo Yii::app()->user->name ?>
                     </li>
                 <?php } ?>
             </ul>
