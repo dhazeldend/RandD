@@ -6,6 +6,21 @@
  * could also be used for a user to edit their profile.
  */
 class AdminController extends AdminBaseController {
+    
+    public function actionError() {
+        if ($error = app()->errorHandler->error) {
+            if (app()->request->isAjaxRequest)
+                echo $error['message'];
+            else {
+                $error_view = 'error';
+                // render custom error views for 400, 403, 404, 500 errors
+                if(in_array($error['code'], array('400','403','404','500'))) {
+                    $error_view .= $error['code'];
+                }
+                $this->render($error_view, $error);
+            }
+        }
+    }
 
     /*
      * renders the login view or processes a user login.
@@ -44,16 +59,5 @@ class AdminController extends AdminBaseController {
     public function actionLogout() {
         Yii::app()->user->logout();
         $this->redirect("/");
-    }
-
-    public function actionError()
-    {
-        if($error=Yii::app()->errorHandler->error)
-        {
-            if(Yii::app()->request->isAjaxRequest)
-                echo $error['message'];
-            else
-                $this->render('error', $error);
-        }
     }
 }
