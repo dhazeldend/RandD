@@ -20,22 +20,6 @@ class RoleController extends AdminBaseController {
             'delete'=>array('deleterole'),
         );
     }
-
-    /**
-     * beforeAction - logic to run before any event
-     */
-    public function beforeAction($action){
-        
-        // set sub menu options 
-        $this->menu = array(
-            array('label' => 'List users', 'url' => array('route' => '/user/index')),
-            array('label' => 'Create a user', 'url' => array('route' => '/user/create')),
-            array('label' => 'List roles', 'url' => array('route' => '/role/index')),
-            array('label' => 'Create a role', 'url' => array('route' => '/role/create'))
-        );
-
-        return true;
-    }
     
     /**
      * Displays a particular model.

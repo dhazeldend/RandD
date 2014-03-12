@@ -1,3 +1,12 @@
+<?php
+    $this->menu = array(
+        array('label' => 'List users', 'url' => array('route' => '/user/index')),
+        array('label' => 'Create a user', 'url' => array('route' => '/user/create')),
+        array('label' => 'List roles', 'url' => array('route' => '/role/index')),
+        array('label' => 'Create a role', 'url' => array('route' => '/role/create'))
+    );
+?>
+
 <h3>[Role] <?php echo $model->name; ?></h3>
 <h5><?php echo $model->description; ?></h5>
 
