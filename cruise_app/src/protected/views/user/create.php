@@ -1,7 +1,3 @@
-<?php $this->menu = array(
-    array('label' => 'List users', 'url' => array('route' => 'user/index')),
-    array('label' => 'Create a user', 'url' => array('route' => 'user/create')));?>
-
 <h3>Create a new user</h3>
 <h5>Complete the fields then click create to continue:</h5>
 <hr>

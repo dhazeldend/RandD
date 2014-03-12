@@ -4,7 +4,7 @@ $this->pageTitle=Yii::app()->name . ' - CMS Login';
 
 <?php 
 $form=$this->beginWidget('CActiveForm', array(
-    'id'=>'redactor-login-form',
+    'id'=>'login-form',
     'enableClientValidation'=>true,
     'clientOptions' => array(
         'validateOnSubmit'=>true,
@@ -14,12 +14,12 @@ $form=$this->beginWidget('CActiveForm', array(
 )); 
 ?>
 <style>
-    .redactor-login { width:400px; margin:0 auto; background:#fff; padding:20px; margin-top:5%;}
-    .redactor-login input { margin-bottom:10px;}
+    .login { width:400px; margin:0 auto; background:#fff; padding:20px; margin-top:5%;}
+    .login input { margin-bottom:10px;}
 </style>
-<div class="redactor-login row">
+<div class="login row">
     <div class="text-center">
-        <?php echo '<img src="'.asset('/img/redactor-logo.png').'"/> '; ?>
+        <center><?php echo '<img src="'.asset('/img/logo.png').'"/> '; ?></center>
     </div>
     <form class="form" role="form">
         <div class="form-group">

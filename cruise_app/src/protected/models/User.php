@@ -140,12 +140,6 @@ class User extends CActiveRecord
 		));
 	}
 
-    public function getAllowedPublications() {
-        $publications = array();
-        $sql = "select publication_id from user_publications where user_id = " . $this->id;
-        $publications = Yii::app()->db->createCommand($sql)->queryColumn();
-        return $publications;
-    }
 
     /*
      * Method to encrypt string
@@ -165,39 +159,6 @@ class User extends CActiveRecord
         );
     }
     
-    /*
-     * Assign an article to a user
-     * 
-     * @param user_id string
-     * @param article_id string
-     * 
-     * @return boolean
-     */
-    public function assignArticle($user_id, $article_id) {
-        $userArticles = UserArticles::model()->findByAttributes(array("user_id" => $user_id, "article_id" => $article_id));
-        
-        if (!$userArticles) {
-            $userArticles->user_id = $user_id;
-            $userArticles->article_id = $article_id;
-            $userArticles->save();
-        }
-        return true;
-    }
-
-    /*
-     * Determine if the article has been assigned to the logged in user.
-     * 
-     * @param article_id string
-     * 
-     * @return boolean
-     */
-    public function isAssignedArticle($article_id){
-        $sql = "SELECT user_id FROM users_articles WHERE article_id=:articleId AND user_id=:userId";
-        $command = Yii::app()->db->createCommand($sql);
-        $command->bindValue(":articleId", $article_id, PDO::PARAM_STR);
-        $command->bindValue(":userId", Yii::app()->user->id, PDO::PARAM_INT);
-        return $command->execute()==1 ? true : false;
-    }
     
     /*
      * Retrieves the user information based on the email address
@@ -210,33 +171,5 @@ class User extends CActiveRecord
         return User::model()->findByAttributes(array("email" => $email));
     }
 
-    /*
-    * Return a list of users that can be assigned.
-    * 
-    * @return array
-    */
-    public function getUsersToAssign(){
-        $allowedPublications;
-        $count = 1;
-        if(count(Yii::app()->user->getState('allowedPublications', null)) > 0){
-            foreach(Yii::app()->user->getState('allowedPublications', null) as $publication){
-                if($count == 1){
-                    $allowedPublications = "'".$publication."'";
-                } else { 
-                    $allowedPublications .= ", '".$publication."'";
-                }
-                $count++;
-            }
-        } else {
-            $allowedPublications = "'none'";
-        }
 
-        $sql = "SELECT DISTINCT email, username FROM users, user_publications WHERE users.id = user_publications.user_id AND user_publications.publication_id IN (".$allowedPublications.") ORDER BY email ASC";
-        if($users = Yii::app()->db->createCommand($sql)->queryAll()){
-            return $users;
-        } else {
-            return false;
-        }
-        
-    }
 }

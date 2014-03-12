@@ -5,7 +5,7 @@
  * signing in and out of a cms user.
  * could also be used for a user to edit their profile.
  */
-class AccountController extends CController {
+class AccountController extends AdminBaseController {
 
     /*
      * renders the login view or processes a user login.
