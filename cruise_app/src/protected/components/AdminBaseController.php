@@ -17,14 +17,13 @@ class AdminBaseController extends CController {
         $this->route = Yii::app()->request->requestUri;
         
         // check user is logged in 
-        if (app()->user->isGuest && $this->route != "/account/login") {
+        if (app()->user->isGuest && $this->route != '/admin/login') {
             if (app()->request->isAjaxRequest) {
                 // Set the return url to the home page when your authenticated session expires and an ajax request is made
                 // This prevents redirect loop.
-                app()->user->returnUrl = "/";
+                app()->user->returnUrl = '/';
                 // raise an error to show that the user is logged out.                    
-                throw new CHttpException(401, "You are not authorized to perform this action.");
-
+                throw new CHttpException(401, 'You are not authorized to perform this action.');
             } else {
                 // redirect to the login screen.
                 app()->controller->redirect(Yii::app()->user->loginUrl);

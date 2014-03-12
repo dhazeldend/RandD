@@ -26,7 +26,7 @@ return array(
             // enable cookie-based authentication
             'class'=>'CustomWebUser',
             'allowAutoLogin'=>true,
-            'loginUrl' => '/account/login',
+            'loginUrl' => '/admin/login',
             'stateKeyPrefix' => 'redactor',
         ),
     	'log'=>array(
@@ -53,7 +53,7 @@ return array(
 		
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
-			'errorAction'=>'site/error',
+			'errorAction'=>'admin/error',
 		),
 		'urlManager'=>array(
 			'urlFormat'=>'path',

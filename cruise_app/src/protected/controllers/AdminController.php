@@ -5,7 +5,7 @@
  * signing in and out of a cms user.
  * could also be used for a user to edit their profile.
  */
-class AccountController extends AdminBaseController {
+class AdminController extends AdminBaseController {
 
     /*
      * renders the login view or processes a user login.
@@ -44,5 +44,16 @@ class AccountController extends AdminBaseController {
     public function actionLogout() {
         Yii::app()->user->logout();
         $this->redirect("/");
+    }
+
+    public function actionError()
+    {
+        if($error=Yii::app()->errorHandler->error)
+        {
+            if(Yii::app()->request->isAjaxRequest)
+                echo $error['message'];
+            else
+                $this->render('error', $error);
+        }
     }
 }
