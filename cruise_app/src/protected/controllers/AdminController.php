@@ -29,23 +29,18 @@ class AdminController extends AdminBaseController {
      */
     public function actionLogin() {
 
-        $model = new CMSLoginForm;
+        $this->layout = 'empty';
 
-        if (isset($_POST['CMSLoginForm'])) {
-            $model->attributes = $_POST['CMSLoginForm'];
+        if (! app()->user->isGuest) {
+            $this->redirect('/');
+        }
+        $model = new AdminLoginForm;
+
+        if (isset($_POST['AdminLoginForm'])) {
+            
+            $model->attributes = $_POST['AdminLoginForm'];
             if ($model->validate()) {
                 $model->login();
-                
-                // return json response if this action was called via ajax.
-                if (Yii::app()->request->getParam('ajax')) {
-                    echo CJSON::encode(array(
-                        'success' => 1,
-                        'message' => 'You have successfully logged in',
-                        'redirect' => Yii::app()->user->returnUrl
-                    ));
-                    Yii::app()->end();
-                }
-                // redirect to return address if specified.. otherwise redirect to root.
                 $this->redirect(Yii::app()->user->returnUrl ?: '/');
             }
         }
