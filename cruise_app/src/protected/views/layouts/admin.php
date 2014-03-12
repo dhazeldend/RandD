@@ -18,14 +18,12 @@
         ?>
         <div id="mainmenu">
             <ul class="centered">
-                <?php if (!Yii::app()->user->isGuest) { ?>
-                    <li <?php if($this->controller == 'site'): ?>class="active"<?php endif; ?> ><a href="/">HOME</a></li>
-                    <li <?php if($this->controller == 'user' || $this->controller == 'role'): ?>class="active"<?php endif; ?> ><a href="/user">USERS</a></li>
+                <li <?php if($this->controller == 'site'): ?>class="active"<?php endif; ?> ><a href="/">HOME</a></li>
+                <li <?php if($this->controller == 'user' || $this->controller == 'role'): ?>class="active"<?php endif; ?> ><a href="/user">USERS</a></li>
 
-                    <li id="user">
-                        CRUISE ADMIN | <?php echo Yii::app()->user->name ?>
-                    </li>
-                <?php } ?>
+                <li id="user">
+                    CRUISE ADMIN | <?php echo Yii::app()->user->name ?>
+                </li>
             </ul>
         </div> <!-- mainmenu -->
 
