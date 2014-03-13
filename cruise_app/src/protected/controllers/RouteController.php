@@ -1,6 +1,6 @@
 <?php
 
-class CabinController extends AdminBaseController {
+class RouteController extends AdminBaseController {
     
 	/**
 	 * @return array action filters
@@ -37,14 +37,14 @@ class CabinController extends AdminBaseController {
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
 	public function actionCreate() {
-		$model = new Cabin('create');
+		$model = new Route('create');
         
-		if (isset($_POST['Cabin']))
+		if (isset($_POST['Route']))
 		{
-			$model->attributes=$_POST['Cabin'];
+			$model->attributes=$_POST['Route'];
 			if ($model->save()) {
-                Yii::app()->user->setFlash('success', '[Cabin] ' . $model->code . ' was successfully created.');
-                $this->redirect('/cabin');
+                Yii::app()->user->setFlash('success', '[Route] ' . $model->area . ' was successfully created.');
+                $this->redirect('/route');
             }
 		}
 
@@ -64,9 +64,9 @@ class CabinController extends AdminBaseController {
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if (isset($_POST['Cabin'])) {
+		if (isset($_POST['Route'])) {
 
-			$model->attributes = $_POST['Cabin'];
+			$model->attributes = $_POST['Route'];
             $model->modified = new CDbExpression('CURRENT_TIMESTAMP');
 
 			if ($model->save()) {
@@ -91,10 +91,10 @@ class CabinController extends AdminBaseController {
 	 * Lists all models.
 	 */
 	public function actionIndex() {
-        $model = new Cabin('search');
+        $model = new Route('search');
         $model->unsetAttributes();
-        if (isset($_GET['Cabin'])) {
-            $model->attributes=$_GET['Cabin'];
+        if (isset($_GET['Route'])) {
+            $model->attributes=$_GET['Route'];
         }
 		$this->render('index',array(
 			'dataProvider'=>$model->search(),
@@ -105,11 +105,11 @@ class CabinController extends AdminBaseController {
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Cabin the loaded model
+	 * @return Route the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id) {
-		$model = Cabin::model()->findByPk($id);
+		$model = Route::model()->findByPk($id);
 		if ($model === null) {
             throw new CHttpException(404,'The requested page does not exist.');
         }
@@ -118,7 +118,7 @@ class CabinController extends AdminBaseController {
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Cabin $model the model to be validated
+	 * @param Route $model the model to be validated
 	 */
 	protected function performAjaxValidation($model) {
 		if (isset($_POST['ajax']) && $_POST['ajax']==='user-form') {

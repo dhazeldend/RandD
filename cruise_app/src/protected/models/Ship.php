@@ -53,9 +53,9 @@ class Ship extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'cabins' => array(self::HAS_MANY, 'Cabins', 'ship_id'),
+			'cabins' => array(self::HAS_MANY, 'Cabin', 'ship_id'),
 			'itineraries' => array(self::HAS_MANY, 'Itineraries', 'ship_id'),
-			'cruise' => array(self::BELONGS_TO, 'CruiseLines', 'cruise_id'),
+			'cruise' => array(self::BELONGS_TO, 'CruiseLine', 'cruise_id'),
 		);
 	}
 

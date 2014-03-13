@@ -54,8 +54,8 @@ class Pricing extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'cabin' => array(self::BELONGS_TO, 'Cabins', 'cabin_id'),
-			'itinerary' => array(self::BELONGS_TO, 'Itineraries', 'itinerary_id'),
+			'cabin' => array(self::BELONGS_TO, 'Cabin', 'cabin_id'),
+			'itinerary' => array(self::BELONGS_TO, 'Itinerary', 'itinerary_id'),
 		);
 	}
 

@@ -16,16 +16,16 @@
         array('name'=>'code','template'=>'<a class="editbutton" data-id="<=id>"><=code></a>'),
         array('name'=>'description'),
         array('name'=>'passengers'),
-        array('name'=>'status','searchtemplate'=>CHtml::dropDownList('User[status]',null,User::model()->getStatusOptions(),array('empty'=>"Don't care"))))));?>
+        array('name'=>'ship->name','searchtemplate'=>CHtml::dropDownList('Cabin[ship_id]',null,CHtml::listData(Ship::model()->findAll(),'id','name'),array('empty'=>"Don't care"))))));?>
 
-<?php cs()->registerScript('user-index',"
+<?php cs()->registerScript('cabin-index',"
 
 $(document).on('click', '.editbutton', function() {
     showModal({
         title: $(this).html(),
-        url: '/user/view/' + $(this).attr('data-id'),
+        url: '/cabin/view/' + $(this).attr('data-id'),
         submit: function() {
-            $.growlUI('User was successfully updated.');
+            $.growlUI('Cabin was successfully updated.');
         },
         close: function() {
             // Refresh the grid

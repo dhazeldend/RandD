@@ -27,7 +27,7 @@ class Port extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id, name, code', 'required'),
+			array('name, code', 'required'),
 			array('id', 'length', 'max'=>11),
 			array('name', 'length', 'max'=>200),
 			array('code', 'length', 'max'=>3),

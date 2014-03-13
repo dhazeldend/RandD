@@ -52,7 +52,7 @@ class Cabin extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'ship' => array(self::BELONGS_TO, 'Ships', 'ship_id'),
+			'ship' => array(self::BELONGS_TO, 'Ship', 'ship_id'),
 			'pricings' => array(self::HAS_MANY, 'Pricing', 'cabin_id'),
 		);
 	}

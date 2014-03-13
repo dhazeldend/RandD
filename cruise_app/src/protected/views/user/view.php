@@ -48,7 +48,7 @@
     // to the default password.
     $('#resetPwd').click(function() {
         if (confirm('Are you sure that you want to reset the password?')) {
-            $.post('/redactor/user/resetpassword/<?php echo $model->id; ?>', function() {
+            $.post('/user/resetpassword/<?php echo $model->id; ?>', function() {
                 alert('Password was successfully reset for <?php echo $model->username; ?>')
             });
         }
@@ -58,7 +58,7 @@
     $('#delete').click(function() {
         if (confirm('Confirm delete user - <?php echo $model->username; ?>?')) {
             var modal = $(this).closest('.modal');
-            $.post('/redactor/user/delete/<?php echo $model->id; ?>', modal.modal('hide'));
+            $.post('/user/delete/<?php echo $model->id; ?>', modal.modal('hide'));
         }
     });
 </script>

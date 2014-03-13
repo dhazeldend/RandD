@@ -55,6 +55,8 @@ class Route extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'itineraries' => array(self::HAS_MANY, 'Itineraries', 'route_id'),
+			'start_port' => array(self::BELONGS_TO, 'Port', 'start_port_id'),
+			'end_port' => array(self::BELONGS_TO, 'Port', 'end_port_id'),
 		);
 	}
 
