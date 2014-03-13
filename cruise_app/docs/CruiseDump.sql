@@ -35,7 +35,7 @@ CREATE TABLE `cabins` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `fk_cabins_ships_idx` (`ship_id`),
   CONSTRAINT `fk_cabins_ships` FOREIGN KEY (`ship_id`) REFERENCES `ships` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,6 +44,7 @@ CREATE TABLE `cabins` (
 
 LOCK TABLES `cabins` WRITE;
 /*!40000 ALTER TABLE `cabins` DISABLE KEYS */;
+INSERT INTO `cabins` VALUES (1,1,'Presidential suite','The most luxurious cabin on the ship',2,'2014-03-12 04:05:40'),(2,1,'Budget Suite','only for broke bastards (NOTE: this is a really kak cabin)',1,NULL),(3,1,'Love Cabin','for those special moments with loved ones',3,'2014-03-12 03:58:21');
 /*!40000 ALTER TABLE `cabins` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -62,7 +63,7 @@ CREATE TABLE `cruise_lines` (
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -71,6 +72,7 @@ CREATE TABLE `cruise_lines` (
 
 LOCK TABLES `cruise_lines` WRITE;
 /*!40000 ALTER TABLE `cruise_lines` DISABLE KEYS */;
+INSERT INTO `cruise_lines` VALUES (1,'001','MSC Cruise 01','msc.com/cruise01','2014-03-12 04:28:01'),(2,'002','Titanic Cruise Lux','http://www.google.com?q=titanic','2014-03-12 05:14:57'),(3,'003','Plank','www.onamotherfuckingplank.com/superior_cruises_on_a_floating_plank','2014-03-12 04:25:53');
 /*!40000 ALTER TABLE `cruise_lines` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -140,12 +142,12 @@ DROP TABLE IF EXISTS `ports`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `ports` (
-  `id` int(11) unsigned NOT NULL,
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(200) NOT NULL,
   `code` varchar(3) NOT NULL,
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -154,6 +156,7 @@ CREATE TABLE `ports` (
 
 LOCK TABLES `ports` WRITE;
 /*!40000 ALTER TABLE `ports` DISABLE KEYS */;
+INSERT INTO `ports` VALUES (1,'Port1','001','2014-03-12 06:25:12'),(2,'Port2','002',NULL);
 /*!40000 ALTER TABLE `ports` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -174,6 +177,7 @@ CREATE TABLE `pricing` (
   `insurance` float NOT NULL,
   `special` int(11) NOT NULL,
   `modified` datetime DEFAULT NULL,
+  `code` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_pricing_cabins_idx` (`cabin_id`),
   KEY `fk_pricing_itineraries_idx` (`itinerary_id`),
@@ -288,7 +292,7 @@ CREATE TABLE `routes` (
   `modified` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -297,6 +301,7 @@ CREATE TABLE `routes` (
 
 LOCK TABLES `routes` WRITE;
 /*!40000 ALTER TABLE `routes` DISABLE KEYS */;
+INSERT INTO `routes` VALUES (1,1,2,3,'Boomshakalaka','Mordor','http://msc.com/mordor','2014-03-12 06:25:36');
 /*!40000 ALTER TABLE `routes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -318,7 +323,7 @@ CREATE TABLE `ships` (
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `fk_ships_cruise_idx` (`cruise_id`),
   CONSTRAINT `fk_ships_cruise` FOREIGN KEY (`cruise_id`) REFERENCES `cruise_lines` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -327,6 +332,7 @@ CREATE TABLE `ships` (
 
 LOCK TABLES `ships` WRITE;
 /*!40000 ALTER TABLE `ships` DISABLE KEYS */;
+INSERT INTO `ships` VALUES (1,1,'Ship 1','S001','None',NULL),(2,2,'THE TITANIC','Tit','http://google.com?q=titanic','2014-03-12 05:13:55');
 /*!40000 ALTER TABLE `ships` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -368,7 +374,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (5,'admin','21232f297a57a5a743894a0e4a801fc3','admin','1@2.com','admin',1,1,'2014-03-11 21:54:23','2014-03-11 16:47:35','2014-03-11 21:54:28',NULL,5),(6,'dylan','827ccb0eea8a706c4c34a16891f84e7b','Dylan','dg.roux@gmail.com','',1,1,'2014-03-11 21:13:10','2014-03-11 17:02:22','2014-03-11 20:59:57',5,5),(8,'richard','827ccb0eea8a706c4c34a16891f84e7b','Richard','dhazeldend@gmail.com','',1,1,NULL,'2014-03-11 17:04:57','2014-03-11 20:59:07',5,5),(11,'pleb01','827ccb0eea8a706c4c34a16891f84e7b','Pleb01','pleb@gmail.com','test',2,1,NULL,'2014-03-11 21:56:01','2014-03-11 21:56:05',5,5);
+INSERT INTO `users` VALUES (5,'admin','21232f297a57a5a743894a0e4a801fc3','admin','1@2.com','admin',1,1,'2014-03-11 23:40:17','2014-03-11 16:47:35','2014-03-11 22:07:44',NULL,5),(6,'dylan','827ccb0eea8a706c4c34a16891f84e7b','Dylan','dg.roux@gmail.com','',1,1,'2014-03-11 21:13:10','2014-03-11 17:02:22','2014-03-12 00:51:56',5,5),(8,'richard','827ccb0eea8a706c4c34a16891f84e7b','Richard','dhazeldend@gmail.com','',1,1,NULL,'2014-03-11 17:04:57','2014-03-11 22:07:48',5,5),(11,'pleb01','827ccb0eea8a706c4c34a16891f84e7b','Pleb01','pleb@gmail.com','test',2,1,NULL,'2014-03-11 21:56:01','2014-03-11 21:56:05',5,5);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -418,4 +424,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-03-12 16:40:05
+-- Dump completed on 2014-03-13 17:14:15
