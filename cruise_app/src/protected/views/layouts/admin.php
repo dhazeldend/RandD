@@ -18,8 +18,15 @@
         ?>
         <div id="mainmenu">
             <ul class="centered">
-                <li <?php if($this->controller == 'site'): ?>class="active"<?php endif; ?> ><a href="/">HOME</a></li>
-                <li <?php if($this->controller == 'user' || $this->controller == 'role'): ?>class="active"<?php endif; ?> ><a href="/user">USERS</a></li>
+                <li <?php if($this->controller == 'site'): ?>class="active"<?php endif; ?> ><a href="/">home</a></li>
+                <li <?php if($this->controller == 'user' || $this->controller == 'role'): ?>class="active"<?php endif; ?> ><a href="/user">users</a></li>
+                <li <?php if($this->controller == 'cabin'): ?>class="active"<?php endif; ?> ><a href="/cabin">cabins</a></li>
+                <li <?php if($this->controller == 'cruiseline'): ?>class="active"<?php endif; ?> ><a href="/cruiseline">cruiselines</a></li>
+                <li <?php if($this->controller == 'itinerary'): ?>class="active"<?php endif; ?> ><a href="/itinerary">itinerary</a></li>
+                <li <?php if($this->controller == 'port'): ?>class="active"<?php endif; ?> ><a href="/port">ports</a></li>
+                <li <?php if($this->controller == 'pricing'): ?>class="active"<?php endif; ?> ><a href="/pricing">pricing</a></li>
+                <li <?php if($this->controller == 'route'): ?>class="active"<?php endif; ?> ><a href="/route">routes</a></li>
+                <li <?php if($this->controller == 'ship'): ?>class="active"<?php endif; ?> ><a href="/ship">ships</a></li>
 
                 <li id="user">
                     CRUISE ADMIN | <?php echo Yii::app()->user->name ?>

@@ -17,7 +17,7 @@ hr { border-color: #AAAAAA; }
 #mainmenu ul li { display: inline-block; padding: 5px; }
 #mainmenu ul li:hover { background-color: #805e9b; }
 #mainmenu ul li.active { background-color: #1970aa; }
-#mainmenu ul li a { font-size: 14px; color: #EEE; }
+#mainmenu ul li a { font-size: 14px; color: #EEE; text-transform: uppercase; }
 #mainmenu #user { float: right; text-transform: uppercase; }
 
 #submenu .navbar { margin: -1px 5px 0; }

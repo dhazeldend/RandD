@@ -1,8 +1,8 @@
 <?php
     $this->menu = array(
-        array('label' => 'List users', 'url' => array('route' => '/user/index')),
+        array('label' => 'List users', 'url' => array('route' => '/user')),
         array('label' => 'Create a user', 'url' => array('route' => '/user/create')),
-        array('label' => 'List roles', 'url' => array('route' => '/role/index')),
+        array('label' => 'List roles', 'url' => array('route' => '/role')),
         array('label' => 'Create a role', 'url' => array('route' => '/role/create'))
     );
 ?>

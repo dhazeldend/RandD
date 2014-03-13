@@ -1,6 +1,6 @@
 <?php
 
-class UserController extends AdminBaseController {
+class CabinController extends AdminBaseController {
     
 	/**
 	 * @return array action filters
@@ -37,17 +37,17 @@ class UserController extends AdminBaseController {
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
 	public function actionCreate() {
-		$model = new User('create');
+		$model = new Cabin('create');
         
-		if (isset($_POST['User']))
+		if (isset($_POST['Cabin']))
 		{
-			$model->attributes=$_POST['User'];
+			$model->attributes=$_POST['Cabin'];
             $model->create_user_id = Yii::app()->user->getId();
             $model->password = md5($model->password);
             $model->repeatpassword = md5($model->repeatpassword);
 			if ($model->save()) {
-                Yii::app()->user->setFlash('success', '[User] ' . $model->name . ' was successfully created.');
-                $this->redirect('/user');
+                Yii::app()->user->setFlash('success', '[Cabin] ' . $model->name . ' was successfully created.');
+                $this->redirect('/cabin');
             }
 		}
 
@@ -67,9 +67,9 @@ class UserController extends AdminBaseController {
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if (isset($_POST['User'])) {
+		if (isset($_POST['Cabin'])) {
 
-			$model->attributes = $_POST['User'];
+			$model->attributes = $_POST['Cabin'];
             $model->update_user_id = Yii::app()->user->getId();
             $model->update_time = new CDbExpression('CURRENT_TIMESTAMP');
 
@@ -85,11 +85,9 @@ class UserController extends AdminBaseController {
 
 	/**
 	 * Deletes a particular model.
-	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
 	public function actionDelete($id) {
-        // delete the user
 		$this->loadModel($id)->delete();
 	}
 
@@ -97,31 +95,25 @@ class UserController extends AdminBaseController {
 	 * Lists all models.
 	 */
 	public function actionIndex() {
-        $model = new User('search');
+        $model = new Cabin('search');
         $model->unsetAttributes();
-        if (isset($_GET['User'])) {
-            $model->attributes=$_GET['User'];
+        if (isset($_GET['Cabin'])) {
+            $model->attributes=$_GET['Cabin'];
         }
 		$this->render('index',array(
 			'dataProvider'=>$model->search(),
 		));
 	}
-
-    public function actionResetPassword($id) {
-        $model=$this->loadModel($id);
-        $model->password = md5('12345');
-        $model->save();
-    }
-
+    
 	/**
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return User the loaded model
+	 * @return Cabin the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id) {
-		$model = User::model()->findByPk($id);
+		$model = Cabin::model()->findByPk($id);
 		if ($model === null) {
             throw new CHttpException(404,'The requested page does not exist.');
         }
@@ -130,7 +122,7 @@ class UserController extends AdminBaseController {
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param User $model the model to be validated
+	 * @param Cabin $model the model to be validated
 	 */
 	protected function performAjaxValidation($model) {
 		if (isset($_POST['ajax']) && $_POST['ajax']==='user-form') {
