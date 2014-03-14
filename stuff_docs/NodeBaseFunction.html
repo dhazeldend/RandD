@@ -1,0 +1,67 @@
+
+<div id="article">
+
+    <div id="heading"></div>
+    
+    ........
+</div>
+
+<button class="page_submit" data-action="/article/update/1" data-replace="article">Update Article</button>
+
+
+
+----------------------------------------------------------
+FRONTEND JS -- BASE JS FILE
+
+$('.page_submit').click(function() {
+
+    ajax({
+
+        url: $(this).data('action'),
+
+        data: {
+            html: $(this).data('replace').html()
+        },
+
+        success: function(data) {
+
+            $('#' + $(this).data('replace')).replaceWith(data.content);
+        }
+    });
+
+});
+
+
+--------------------------
+
+
+NODE SERVER
+
+class articleController {
+
+    var j; // juqery object of page
+
+    function beforeAction() {
+
+        if (POST['withPage']) {
+            j = $(POST['html']);
+        }
+    }
+
+    function renderJ() {
+
+        echo {
+            content: j.html(),
+            data: {}
+        }
+    }
+    
+    function update() {
+
+        // use j... 
+
+        j.find('#heading').html('test');
+
+        renderJ();
+    }
+}
