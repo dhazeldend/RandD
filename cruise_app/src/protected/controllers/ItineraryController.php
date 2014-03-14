@@ -1,6 +1,6 @@
 <?php
 
-class PricingController extends AdminBaseController {
+class ItineraryController extends AdminBaseController {
     
 	/**
 	 * @return array action filters
@@ -37,14 +37,14 @@ class PricingController extends AdminBaseController {
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
 	public function actionCreate() {
-		$model = new Pricing('create');
+		$model = new Itinerary('create');
         
-		if (isset($_POST['Pricing']))
+		if (isset($_POST['Itinerary']))
 		{
-			$model->attributes=$_POST['Pricing'];
+			$model->attributes=$_POST['Itinerary'];
 			if ($model->save()) {
-                Yii::app()->user->setFlash('success', '[Pricing] ' . $model->code . ' was successfully created.');
-                $this->redirect('/pricing');
+                Yii::app()->user->setFlash('success', '[Itinerary] ' . $model->code . ' was successfully created.');
+                $this->redirect('/itinerary');
             }
 		}
 
@@ -64,9 +64,9 @@ class PricingController extends AdminBaseController {
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if (isset($_POST['Pricing'])) {
+		if (isset($_POST['Itinerary'])) {
 
-			$model->attributes = $_POST['Pricing'];
+			$model->attributes = $_POST['Itinerary'];
             $model->modified = new CDbExpression('CURRENT_TIMESTAMP');
 
 			if ($model->save()) {
@@ -91,10 +91,10 @@ class PricingController extends AdminBaseController {
 	 * Lists all models.
 	 */
 	public function actionIndex() {
-        $model = new Pricing('search');
+        $model = new Itinerary('search');
         $model->unsetAttributes();
-        if (isset($_GET['Pricing'])) {
-            $model->attributes=$_GET['Pricing'];
+        if (isset($_GET['Itinerary'])) {
+            $model->attributes=$_GET['Itinerary'];
         }
 		$this->render('index',array(
 			'dataProvider'=>$model->search(),
@@ -105,11 +105,11 @@ class PricingController extends AdminBaseController {
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Pricing the loaded model
+	 * @return Itinerary the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id) {
-		$model = Pricing::model()->findByPk($id);
+		$model = Itinerary::model()->findByPk($id);
 		if ($model === null) {
             throw new CHttpException(404,'The requested page does not exist.');
         }
@@ -118,7 +118,7 @@ class PricingController extends AdminBaseController {
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Pricing $model the model to be validated
+	 * @param Itinerary $model the model to be validated
 	 */
 	protected function performAjaxValidation($model) {
 		if (isset($_POST['ajax']) && $_POST['ajax']==='user-form') {

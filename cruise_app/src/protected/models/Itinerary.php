@@ -53,8 +53,8 @@ class Itinerary extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'ship' => array(self::BELONGS_TO, 'Ships', 'ship_id'),
-			'route' => array(self::BELONGS_TO, 'Routes', 'route_id'),
+			'ship' => array(self::BELONGS_TO, 'Ship', 'ship_id'),
+			'route' => array(self::BELONGS_TO, 'Route', 'route_id'),
 			'pricings' => array(self::HAS_MANY, 'Pricing', 'itinerary_id'),
 		);
 	}

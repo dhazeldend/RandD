@@ -16,7 +16,7 @@
     <table>
         <tr>
             <td><?php echo $form->labelEx($model,'itinerary_id'); ?></td>
-            <td><?php echo $form->dropDownList($model,'itinerary_id',CHtml::listData(Itinerary::model()->findAll(),'id','name')); ?></td>
+            <td><?php echo $form->dropDownList($model,'itinerary_id',CHtml::listData(Itinerary::model()->findAll(),'id','code')); ?></td>
         </tr>
         <tr>
             <td><?php echo $form->labelEx($model,'cabin_id'); ?></td>

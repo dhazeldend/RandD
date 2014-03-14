@@ -36,7 +36,7 @@ class Pricing extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('itinerary_id, cabin_id, cabin_fare, port_charge, service_fee, insurance, special', 'required'),
+			array('itinerary_id, cabin_id, cabin_fare, port_charge, service_fee, insurance, special, code', 'required'),
 			array('itinerary_id, cabin_id, special', 'numerical', 'integerOnly'=>true),
 			array('cabin_fare, port_charge, service_fee, insurance', 'numerical'),
 			array('modified', 'safe'),
@@ -73,6 +73,7 @@ class Pricing extends CActiveRecord
 			'service_fee' => 'Service Fee',
 			'insurance' => 'Insurance',
 			'special' => 'Special',
+			'code' => 'Code',
 			'modified' => 'Modified',
 		);
 	}

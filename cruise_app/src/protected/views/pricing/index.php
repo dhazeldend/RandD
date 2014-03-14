@@ -19,7 +19,7 @@
         array('name'=>'service_fee'),
         array('name'=>'insurance'),
         array('name'=>'special'),
-        array('name'=>'itinerary->name','searchtemplate'=>CHtml::dropDownList('Pricing[itinerary_id]',null,CHtml::listData(Itinerary::model()->findAll(),'id','name'),array('empty'=>"Don't care"))),
+        array('name'=>'itinerary->code','searchtemplate'=>CHtml::dropDownList('Pricing[itinerary_id]',null,CHtml::listData(Itinerary::model()->findAll(),'id','code'),array('empty'=>"Don't care"))),
         array('name'=>'cabin->code','searchtemplate'=>CHtml::dropDownList('Pricing[cabin_id]',null,CHtml::listData(Cabin::model()->findAll(),'id','code'),array('empty'=>"Don't care"))))));?>
 
 <?php cs()->registerScript('pricing-index',"
