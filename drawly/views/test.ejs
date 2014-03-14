@@ -1,0 +1,55 @@
+<style type="text/css">
+  body { background-color: #E5E5E5; }
+  #myCanvas { margin: 0 auto; display: block; width: 100px; height: 100px; border: 1px solid #CCCCCC; background-color: #F5F5F5; box-shadow: 2px 2px 5px #CCCCCC; }
+</style>
+
+<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+
+$(function() {
+
+  var canvas = document.getElementById('myCanvas');
+  var $canvas = $(canvas);
+  var context = canvas.getContext('2d');
+
+  var socket = io.connect('http://' + window.location.hostname);
+  socket.on('draw', function (data) {
+
+    if (canvas.width != data.w && canvas.height != data.h) {
+
+      var doc = $(document);
+      var maxWidth = doc.width() - 50;
+      var maxHeight = doc.height() - 50;
+      var ratio = Math.min(maxWidth / data.w, maxHeight / data.h);
+
+      canvas.width = data.w;
+      canvas.height = data.h;
+      $canvas.width(data.w * ratio);
+      $canvas.height(data.h * ratio);
+    }
+
+    if (data.type == 'down') {
+
+      context.beginPath();
+      context.moveTo(data.x, data.y);
+
+    } else if (data.type == 'move') {
+
+      context.lineTo(data.x, data.y);
+      context.stroke();
+
+    } else if (data.type == 'up') {
+
+      context.stroke();
+      context.closePath();
+    }
+
+  });
+});
+  
+</script>
+
+Drawly 0.2million | fuck yeah
+
+<canvas id="myCanvas"></canvas>
