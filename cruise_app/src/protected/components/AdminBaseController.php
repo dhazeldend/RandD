@@ -38,9 +38,15 @@ class AdminBaseController extends CController {
         // Select2
         cs()->registerScriptFile('//cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.min.js', CClientScript::POS_END);
         cs()->registerCssFile('//cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.min.css');
+        // jqueryUi
+        cs()->registerCssFile('//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css');
+        cs()->registerScriptFile('//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js', CClientScript::POS_END);
         // Local scripts
         cs()->registerCssFile(asset('/css/admin.css'));
         cs()->registerScriptFile(asset('/js/modalex.js'), CClientScript::POS_END);
+        cs()->registerScriptFile(asset('/js/cruise.base.js'), CClientScript::POS_END);
+        cs()->registerCssFile(asset('css/jquery-ui-timepicker-addon.min.css'));
+        cs()->registerScriptFile(asset('js/jquery-ui-timepicker-addon.min.js'), CClientScript::POS_END);
         // includes for yii
         cs()->registerScriptFile('//cdnjs.cloudflare.com/ajax/libs/jquery-browser/0.0.5/jquery.browser.min.js?v=1', CClientScript::POS_END);
         cs()->registerScriptFile('//cdnjs.cloudflare.com/ajax/libs/jquery.ba-bbq/1.2.1/jquery.ba-bbq.min.js?v=1', CClientScript::POS_END);

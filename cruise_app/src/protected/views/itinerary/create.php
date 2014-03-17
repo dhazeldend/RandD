@@ -28,11 +28,11 @@
         </tr>
         <tr>
             <td><?php echo $form->labelEx($model,'start_date'); ?></td>
-            <td><?php echo $form->textField($model,'start_date',array('maxlength'=>256)); ?></td>
+            <td><?php echo $form->textField($model,'start_date',array('maxlength'=>256, 'class'=>'datepicker')); ?></td>
         </tr>
         <tr>
             <td><?php echo $form->labelEx($model,'end_date'); ?></td>
-            <td><?php echo $form->textField($model,'end_date',array('maxlength'=>256)); ?></td>
+            <td><?php echo $form->textField($model,'end_date',array('maxlength'=>256, 'class'=>'datepicker')); ?></td>
         </tr>
         <tr class="footer">
             <td></td>

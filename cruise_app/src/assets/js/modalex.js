@@ -80,6 +80,9 @@ function showModal(options) {
                                 modal.find('.modal-body-content').html(content);
                                 modal.find('.modal-body').animate({ height: modal.find('.modal-body-content').height() }, 300, function() {
                                     modal.find('.modal-body').css('height', '');
+                                    modal.find(".datepicker" ).datetimepicker({
+                                        dateFormat: "yy-mm-dd"
+                                    });
                                 });
                                 modal.find('.modal-body-content').fadeIn(500);
                             });
