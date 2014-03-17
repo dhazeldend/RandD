@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"tr",
+				"true"
+			],
+			[
+				"te",
+				"text-transform"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"h",
+				"h2	Tag"
+			],
+			[
 				"not",
 				"notify"
 			],
@@ -74,10 +90,6 @@
 			[
 				"bo",
 				"body"
-			],
-			[
-				"te",
-				"textBlock"
 			],
 			[
 				"po",
@@ -160,10 +172,6 @@
 				"border-color"
 			],
 			[
-				"pa",
-				"padding-right"
-			],
-			[
 				"break",
 				"breaking"
 			],
@@ -174,10 +182,6 @@
 			[
 				"res",
 				"result"
-			],
-			[
-				"h",
-				"h4	Tag"
 			],
 			[
 				"type",
@@ -447,6 +451,22 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/config/main.php",
+			"settings":
+			{
+				"buffer_size": 3014,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/components/AdminBaseController.php",
+			"settings":
+			{
+				"buffer_size": 2039,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -473,8 +493,88 @@
 	"file_history":
 	[
 		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/docs/deploy.txt",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/docs/readme.txt",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/controllers/AdminController.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/components/AdminBaseController.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/site/error404.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/controllers/SiteController.php",
 		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/config/main.php",
 		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/layouts/main.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/controllers/FrontendController.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/components/SiteBaseController.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/components/FrontendBaseController.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/assets/js/cruise.base.js",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/controllers/CabinController.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/itinerary/index.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/itinerary/update.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/itinerary/view.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/controllers/PricingController.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/pricing/index.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/pricing/update.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/pricing/view.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/controllers/ItineraryController.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/models/Itinerary.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/itinerary/create.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/pricing/create.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/models/Pricing.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/models/Route.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/docs/CruiseDump.sql",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/models/Cabin.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/controllers/PortController.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/models/Port.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/port/index.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/port/create.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/port/update.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/port/view.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/controllers/RouteController.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/route/index.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/route/create.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/route/update.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/layouts/admin.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/route/view.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/models/Ship.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/controllers/ShipController.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/ship/create.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/ship/update.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/ship/view.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/ship/index.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/models/CruiseLine.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/controllers/CruiselineController.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/cruiseline/index.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/cruiseline/view.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/cruiseline/update.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/cruiseline/create.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/cruiselines/index.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/cabin/index.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/cabin/update.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/cabin/view.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/user/view.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/cabin/create.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/admin/error404.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/admin/error500.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/role/create.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/role/update.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/role/index.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/user/index.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/user/create.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/assets/css/admin.css",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/controllers/UserController.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/layouts/empty.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/admin/login.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/assets/img/logo.png",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/models/AdminLoginForm.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/models/CMSLoginForm.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/admin/error400.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/admin/error403.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/components/UserIdentity.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/components/CustomWebUser.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/controllers/AccountController.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/controllers/RoleController.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/user/update.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/packages/yii/framework/gii/GiiModule.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/models/User.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/components/EasyTable.php",
+		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/account/login.php",
 		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/views/site/error.php",
 		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/packages/yii/demos/blog/protected/views/site/error.php",
 		"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/php_info.php",
@@ -519,87 +619,7 @@
 		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/paywall/views/paywall/login.php",
 		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/paywall/components/views/paywall_subscribe.php",
 		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/webapp/views/article/index_partial.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/RedactorModule.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/controllers/ArticleController.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/packages/webapp/components/phpQuery.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/webapp/components/article/views/story.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/webapp/components/article/views/blckquote.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/components/article/BlckquoteEdit.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/webapp/components/article/views/image_head.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/webapp/components/article/views/intro.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/webapp/views/layouts/main.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/webapp/behaviors/WebappBase.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/webapp/assets/js/new/respond.js",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/assets/js/widgets/article.headeredit.js",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/assets/js/widgets/article.authorsedit.js",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/assets/js/widgets/article.settingsedit.js",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/webapp/assets/js/new/mm.gallery.js",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/webapp/components/section/views/multimedia.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/webapp/assets/js/new/mm.gallery.min.js",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/webapp/controllers/MultimediaController.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/webapp/components/VideoPlayer.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/webapp/models/media/Image.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/webapp/assets/js/section.js",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/webapp/components/section/views/layout/main_head_multimedia.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/webapp/components/views/image_carousel.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/webapp/components/section/LayoutBlock.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/assets/js/widgets/article.storyedit.js",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/assets/js/widgets/article.blckquoteedit.js",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/webapp/controllers/FeedController.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/RedactorWebSocket.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/yii/framework/web/CBaseController.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/yii/framework/web/widgets/CWidget.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/webapp/assets/js/article.widgets.js",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/webapp/controllers/ArticleController.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/webapp/assets/css/article.widgets.css",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/webapp/models/article/Article.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/components/article/views/redactor_story_widget.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/components/article/ImageGalleryEdit.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/components/RedactorStoryWidget.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/controllers/ImageController.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/webapp/components/article/Story.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/controllers/RedisController.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/assets/js/workflow-edit.js",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/views/article/publish_control.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/components/article/views/article_editor_bar.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/webapp/components/article/views/image_gallery.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/components/views/imager.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/assets/js/widgets/article.imagegalleryedit.js",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/assets/css/imager.css",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/webapp/components/article/ImageGallery.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/webapp/components/article/Header.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/webapp/models/article/ArticleStory.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/components/article/views/settings_edit.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/components/article/views/text_block_edit.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/webapp/components/article/views/text_block.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/websockets/Pusher.php",
-		"/Users/dylan.roux/Workspace/webapps/src/dieburger/webapp/protected/tests/WebTestCase.php",
-		"/Users/dylan.roux/Workspace/webapps/support/php/composer.json",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/websockets/server.py",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/websockets/Server.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/assets/css/admin.css",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/behaviors/RedactorArticle.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/websockets/Test.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/websockets/Chat.php",
-		"/Users/dylan.roux/Workspace/webapps/support/php/dev_php.ini",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/websockets/WebSocketServer.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/websockets/Interfaces/Chat.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/websockets/interfaces/Chat.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/websockets/Test/TChat.php",
-		"/private/etc/hosts",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/assets/js/widgets/article.twitteredit.js",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/assets/js/widgets/article.gmapedit.js",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/webapp/components/ArticleWidgetBase.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/webapp/models/article/StoryWidget.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/webapp/assets/css/layout.css",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/components/article/ImageHeadEdit.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/components/article/SettingsEdit.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/components/article/AuthorsEdit.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/webapp/models/media/ArticleImage.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/webapp/components/article/Blckquote.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/components/article/views/story_edit.php",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/webapp/assets/js/new/base.config.js",
-		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/components/article/views/soundcloud_edit.php"
+		"/Users/dylan.roux/Workspace/webapps/src/framework/modules/redactor/RedactorModule.php"
 	],
 	"find":
 	{
@@ -610,6 +630,7 @@
 		"height": 0.0,
 		"where_history":
 		[
+			"/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src",
 			"/Users/dylan.roux/Workspace/webapps/src/framework/modules/webapp/assets/js",
 			"/Users/dylan.roux/Workspace/webapps/fabfile",
 			"/Users/dylan.roux/Workspace/webapps/src",
@@ -636,9 +657,17 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": false,
+		"case_sensitive": true,
 		"find_history":
 		[
+			"Cabin",
+			"name",
+			"Ships",
+			"User",
+			"CMSLoginForm",
+			"Foutiewe e-posadres of ",
+			"activities",
+			"validatePassword",
 			"handleLoginForm",
 			"...",
 			"rsync",
@@ -758,13 +787,6 @@
 			"hasImage",
 			"images",
 			"body",
-			"widget",
-			"hide",
-			"$",
-			"widget",
-			"Widget",
-			"widget",
-			"Widget",
 			"widget"
 		],
 		"highlight": true,
@@ -773,6 +795,13 @@
 		"regex": false,
 		"replace_history":
 		[
+			"Itinerary",
+			"Pricing",
+			"Port",
+			"Route",
+			"Ship",
+			"CruiseLine",
+			"Cabin",
 			"gallery_fotorama",
 			"vId",
 			"+",
@@ -805,8 +834,63 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/config/main.php",
+					"settings":
+					{
+						"buffer_size": 3014,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2165,
+								2165
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 889.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/dylan.roux/Workspace/apps/RandD/cruise_app/src/protected/components/AdminBaseController.php",
+					"settings":
+					{
+						"buffer_size": 2039,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								485,
+								490
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -855,6 +939,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"giimodule",
+				"src/protected/packages/yii/framework/gii/GiiModule.php"
+			],
 			[
 				"analytics",
 				"src/framework/modules/webapp/models/site/Analytics.php"
