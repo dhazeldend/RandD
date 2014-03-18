@@ -97,8 +97,8 @@ class Itinerary extends CActiveRecord
 		$criteria->compare('ship_id',$this->ship_id);
 		$criteria->compare('route_id',$this->route_id);
 		$criteria->compare('code',$this->code,true);
-		$criteria->compare('start_date',$this->start_date,true);
-		$criteria->compare('end_date',$this->end_date,true);
+		$criteria->compare('start_date', '>' . $this->start_date,true);
+		$criteria->compare('end_date', '<' . $this->end_date,true);
 		$criteria->compare('modified',$this->modified,true);
 
 		return new CActiveDataProvider($this, array(
