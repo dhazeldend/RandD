@@ -27,7 +27,7 @@ class RouteController extends AdminBaseController {
 	 * @param integer $id the ID of the model to be displayed
 	 */
 	public function actionView($id) {
-		$this->renderPartial('view',array(
+		$this->render('view',array(
 			'model'=>$this->loadModel($id),
 		));
 	}
@@ -74,7 +74,7 @@ class RouteController extends AdminBaseController {
             }
 		}
 
-		$this->renderPartial('update',array(
+		$this->render('update',array(
 			'model'=>$model,
 		));
 	}

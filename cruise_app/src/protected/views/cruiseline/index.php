@@ -13,24 +13,26 @@
     'searchable' => true,
     'dataProvider' => $dataProvider,
     'columns' => array(
-        array('name'=>'code','template'=>'<a class="editbutton" data-id="<=id>"><=code></a>'),
+        array('name'=>'code','template'=>'<a class="editbutton" href="/cruiseline/view/<=id>" data-id="<=id>"><=code></a>'),
         array('name'=>'name'),
         array('name'=>'url'))));?>
 
-<?php cs()->registerScript('cabin-index',"
+<?php 
+    // cs()->registerScript('cabin-index',"
 
-$(document).on('click', '.editbutton', function() {
-    showModal({
-        title: $(this).html(),
-        url: '/cruiseline/view/' + $(this).attr('data-id'),
-        submit: function() {
-            $.growlUI('Cruise line was successfully updated.');
-        },
-        close: function() {
-            // Refresh the grid
-            $.fn.yiiListView.update('cruiselinelist');
-        }
-    });
-});
+    // $(document).on('click', '.editbutton', function() {
+    //     showModal({
+    //         title: $(this).html(),
+    //         url: '/cruiseline/view/' + $(this).attr('data-id'),
+    //         submit: function() {
+    //             $.growlUI('Cruise line was successfully updated.');
+    //         },
+    //         close: function() {
+    //             // Refresh the grid
+    //             $.fn.yiiListView.update('cruiselinelist');
+    //         }
+    //     });
+    // });
 
-", CClientScript::POS_END); ?>
+    // ", CClientScript::POS_END); 
+?>

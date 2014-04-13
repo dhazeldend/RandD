@@ -13,26 +13,30 @@
     'searchable' => true,
     'dataProvider' => $dataProvider,
     'columns' => array(
-        array('name'=>'code','template'=>'<a class="editbutton" data-id="<=id>"><=code></a>'),
+        array('name'=>'code','template'=>'<a class="editbutton" href="/itinerary/view/<=id>" data-id="<=id>"><=code></a>'),
         array('name'=>'start_date', 'searchtemplate'=>'<input type="text" class="datepicker" name="Itinerary[start_date]">'),
         array('name'=>'end_date', 'searchtemplate'=>'<input type="text" class="datepicker" name="Itinerary[end_date]">'),
         array('name'=>'ship->name','searchtemplate'=>CHtml::dropDownList('Itinerary[ship_id]',null,CHtml::listData(Ship::model()->findAll(),'id','name'),array('empty'=>"Don't care"))),
         array('name'=>'route->area','searchtemplate'=>CHtml::dropDownList('Itinerary[route_id]',null,CHtml::listData(Route::model()->findAll(),'id','area'),array('empty'=>"Don't care"))))));?>
 
-<?php cs()->registerScript('itinerary-index',"
+<?php 
 
-$(document).on('click', '.editbutton', function() {
-    showModal({
-        title: $(this).html(),
-        url: '/itinerary/view/' + $(this).attr('data-id'),
-        submit: function() {
-            $.growlUI('Itinerary was successfully updated.');
-        },
-        close: function() {
-            // Refresh the grid
-            $.fn.yiiListView.update('itinerarylist');
-        }
-    });
-});
+    // cs()->registerScript('itinerary-index',"
 
-", CClientScript::POS_END); ?>
+    // $(document).on('click', '.editbutton', function() {
+    //     showModal({
+    //         title: $(this).html(),
+    //         url: '/itinerary/view/' + $(this).attr('data-id'),
+    //         submit: function() {
+    //             $.growlUI('Itinerary was successfully updated.');
+    //         },
+    //         close: function() {
+    //             // Refresh the grid
+    //             $.fn.yiiListView.update('itinerarylist');
+    //         }
+    //     });
+    // });
+
+    // ", CClientScript::POS_END); 
+
+?>

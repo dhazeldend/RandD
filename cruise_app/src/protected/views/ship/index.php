@@ -13,25 +13,27 @@
     'searchable' => true,
     'dataProvider' => $dataProvider,
     'columns' => array(
-        array('name'=>'code','template'=>'<a class="editbutton" data-id="<=id>"><=code></a>'),
+        array('name'=>'code','template'=>'<a class="editbutton" href="/ship/view/<=id>" data-id="<=id>"><=code></a>'),
         array('name'=>'name'),
         array('name'=>'url'),
         array('name'=>'cruise->name','searchtemplate'=>CHtml::dropDownList('Ship[cruise_id]',null,CHtml::listData(CruiseLine::model()->findAll(),'id','name'),array('empty'=>"Don't care"))))));?>
 
-<?php cs()->registerScript('ship-index',"
+<?php 
+    // cs()->registerScript('ship-index',"
 
-$(document).on('click', '.editbutton', function() {
-    showModal({
-        title: $(this).html(),
-        url: '/ship/view/' + $(this).attr('data-id'),
-        submit: function() {
-            $.growlUI('Ship was successfully updated.');
-        },
-        close: function() {
-            // Refresh the grid
-            $.fn.yiiListView.update('shiplist');
-        }
-    });
-});
+    // $(document).on('click', '.editbutton', function() {
+    //     showModal({
+    //         title: $(this).html(),
+    //         url: '/ship/view/' + $(this).attr('data-id'),
+    //         submit: function() {
+    //             $.growlUI('Ship was successfully updated.');
+    //         },
+    //         close: function() {
+    //             // Refresh the grid
+    //             $.fn.yiiListView.update('shiplist');
+    //         }
+    //     });
+    // });
 
-", CClientScript::POS_END); ?>
+    // ", CClientScript::POS_END); 
+?>

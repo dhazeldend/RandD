@@ -3,7 +3,7 @@
 <div class="dvform min">
 
     <div class="dvmenu">
-        <a class="submit">Save changes</a>
+        <button type="submit" class="submit">Save changes</button>
     </div>
     
     <table>

@@ -13,23 +13,25 @@
     'searchable' => true,
     'dataProvider' => $dataProvider,
     'columns' => array(
-        array('name'=>'code','template'=>'<a class="editbutton" data-id="<=id>"><=code></a>'),
+        array('name'=>'code','template'=>'<a class="editbutton" href="/port/view/<=id>" data-id="<=id>"><=code></a>'),
         array('name'=>'name'))));?>
 
-<?php cs()->registerScript('port-index',"
+<?php 
+    // cs()->registerScript('port-index',"
 
-$(document).on('click', '.editbutton', function() {
-    showModal({
-        title: $(this).html(),
-        url: '/port/view/' + $(this).attr('data-id'),
-        submit: function() {
-            $.growlUI('Port was successfully updated.');
-        },
-        close: function() {
-            // Refresh the grid
-            $.fn.yiiListView.update('portlist');
-        }
-    });
-});
+    // $(document).on('click', '.editbutton', function() {
+    //     showModal({
+    //         title: $(this).html(),
+    //         url: '/port/view/' + $(this).attr('data-id'),
+    //         submit: function() {
+    //             $.growlUI('Port was successfully updated.');
+    //         },
+    //         close: function() {
+    //             // Refresh the grid
+    //             $.fn.yiiListView.update('portlist');
+    //         }
+    //     });
+    // });
 
-", CClientScript::POS_END); ?>
+    // ", CClientScript::POS_END); 
+?>

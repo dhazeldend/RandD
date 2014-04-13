@@ -13,25 +13,27 @@
     'searchable' => true,
     'dataProvider' => $dataProvider,
     'columns' => array(
-        array('name'=>'code','template'=>'<a class="editbutton" data-id="<=id>"><=code></a>'),
+        array('name'=>'code','template'=>'<a class="editbutton" href="/cabin/view/<=id>" data-id="<=id>"><=code></a>'),
         array('name'=>'description'),
         array('name'=>'passengers'),
         array('name'=>'ship->name','searchtemplate'=>CHtml::dropDownList('Cabin[ship_id]',null,CHtml::listData(Ship::model()->findAll(),'id','name'),array('empty'=>"Don't care"))))));?>
 
-<?php cs()->registerScript('cabin-index',"
+<?php 
+    // cs()->registerScript('cabin-index',"
 
-$(document).on('click', '.editbutton', function() {
-    showModal({
-        title: $(this).html(),
-        url: '/cabin/view/' + $(this).attr('data-id'),
-        submit: function() {
-            $.growlUI('Cabin was successfully updated.');
-        },
-        close: function() {
-            // Refresh the grid
-            $.fn.yiiListView.update('cabinlist');
-        }
-    });
-});
+    // $(document).on('click', '.editbutton', function() {
+    //     showModal({
+    //         title: $(this).html(),
+    //         url: '/cabin/view/' + $(this).attr('data-id'),
+    //         submit: function() {
+    //             $.growlUI('Cabin was successfully updated.');
+    //         },
+    //         close: function() {
+    //             // Refresh the grid
+    //             $.fn.yiiListView.update('cabinlist');
+    //         }
+    //     });
+    // });
 
-", CClientScript::POS_END); ?>
+    // ", CClientScript::POS_END); 
+?>

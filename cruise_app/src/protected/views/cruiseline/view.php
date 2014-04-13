@@ -33,4 +33,5 @@
             $.post('/cruiseline/delete/<?php echo $model->id; ?>', modal.modal('hide'));
         }
     });
+
 </script>
