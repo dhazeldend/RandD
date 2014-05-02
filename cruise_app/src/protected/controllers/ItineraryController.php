@@ -27,8 +27,21 @@ class ItineraryController extends AdminBaseController {
 	 * @param integer $id the ID of the model to be displayed
 	 */
 	public function actionView($id) {
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
+		$itinerary = $this->loadModel($id);
+
+        // pricing
+        $model = new Pricing('search');
+        $model->unsetAttributes();
+        $model->itinerary_id = $itinerary->id;
+        if (isset($_GET['Pricing'])) {
+            $model->attributes=$_GET['Pricing'];
+        }
+
+
+        // render 
+        $this->render('view',array(
+			'pricingDataProvider'=>$model->search(),
+            'model'=>$itinerary,
 		));
 	}
 

@@ -27,8 +27,19 @@ class ShipController extends AdminBaseController {
 	 * @param integer $id the ID of the model to be displayed
 	 */
 	public function actionView($id) {
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
+		$ship = $this->loadModel($id);
+
+        // cabins
+        $model = new Cabin('search');
+        $model->unsetAttributes();
+        $model->ship_id = $ship->id;
+        if (isset($_GET['Cabin'])) {
+            $model->attributes=$_GET['Cabin'];
+        }
+
+        $this->render('view',array(
+			'cabinDataProvider'=> $model->search(),
+            'model'=> $ship,
 		));
 	}
 

@@ -27,8 +27,22 @@ class CruiselineController extends AdminBaseController {
 	 * @param integer $id the ID of the model to be displayed
 	 */
 	public function actionView($id) {
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
+		
+        $cruise_line = $this->loadModel($id);
+
+        // ship data
+        $model = new Ship('search');
+        $model->unsetAttributes();
+        $model->cruise_id = $cruise_line->id;
+        if (isset($_GET['Ship'])) {
+            $model->attributes=$_GET['Ship'];
+        }
+
+
+        // render view
+        $this->render('view',array(
+			'model'=> $cruise_line,
+            'shipDataProvider'=>$model->search()
 		));
 	}
 

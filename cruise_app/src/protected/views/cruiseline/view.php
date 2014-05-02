@@ -24,6 +24,22 @@
         </tr>
     </table>
 </div>
+<br><br>
+<h3>Ships</h3>
+<div>
+    <?php 
+        $this->widget('EasyTable', array(
+            'id' => 'shiplist',
+            'searchable' => false,
+            'dataProvider' => $shipDataProvider,
+            'columns' => array(
+                array('name'=>'code','template'=>'<a class="editbutton" href="/ship/view/<=id>" data-id="<=id>"><=code></a>'),
+                array('name'=>'name'),
+                array('name'=>'url'),
+            )
+        ));
+    ;?>
+</div>
 
 <script>
     // Hook up the delete button's click event.

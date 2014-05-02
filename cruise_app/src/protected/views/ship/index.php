@@ -8,15 +8,19 @@
 <h3>Create and modify ships</h3>
 <h5>select a ship to view details.</h5>
 
-<?php $this->widget('EasyTable', array(
-    'id' => 'shiplist',
-    'searchable' => true,
-    'dataProvider' => $dataProvider,
-    'columns' => array(
-        array('name'=>'code','template'=>'<a class="editbutton" href="/ship/view/<=id>" data-id="<=id>"><=code></a>'),
-        array('name'=>'name'),
-        array('name'=>'url'),
-        array('name'=>'cruise->name','searchtemplate'=>CHtml::dropDownList('Ship[cruise_id]',null,CHtml::listData(CruiseLine::model()->findAll(),'id','name'),array('empty'=>"Don't care"))))));?>
+<?php 
+    $this->widget('EasyTable', array(
+        'id' => 'shiplist',
+        'searchable' => true,
+        'dataProvider' => $dataProvider,
+        'columns' => array(
+            array('name'=>'code','template'=>'<a class="editbutton" href="/ship/view/<=id>" data-id="<=id>"><=code></a>'),
+            array('name'=>'name'),
+            array('name'=>'url'),
+            array('name'=>'cruise->name','searchtemplate'=>CHtml::dropDownList('Ship[cruise_id]',null,CHtml::listData(CruiseLine::model()->findAll(),'id','name'),array('empty'=>"Don't care")))
+        )
+    ));
+?>
 
 <?php 
     // cs()->registerScript('ship-index',"

@@ -30,6 +30,14 @@
             <td><?php echo CHtml::encode($model->getAttributeLabel('special')); ?>:</td>
             <td><?php echo CHtml::encode($model->special); ?></td>
         </tr>
+        <tr>
+            <td>Itinerary:</td>
+            <td><a href="/itinerary/view/<?php echo $model->itinerary_id; ?>"><?php echo $model->itinerary->code; ?></a></td>
+        </tr>
+        <tr>
+            <td>Cabin:</td>
+            <td><a href="/cabin/view/<?php echo $model->cabin_id; ?>"><?php echo $model->cabin->code; ?></a></td>
+        </tr>
     </table>
 </div>
 

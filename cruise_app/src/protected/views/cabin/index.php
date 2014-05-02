@@ -8,15 +8,19 @@
 <h3>Create and modify cabins</h3>
 <h5>select a cabin to view details.</h5>
 
-<?php $this->widget('EasyTable', array(
-    'id' => 'cabinlist',
-    'searchable' => true,
-    'dataProvider' => $dataProvider,
-    'columns' => array(
-        array('name'=>'code','template'=>'<a class="editbutton" href="/cabin/view/<=id>" data-id="<=id>"><=code></a>'),
-        array('name'=>'description'),
-        array('name'=>'passengers'),
-        array('name'=>'ship->name','searchtemplate'=>CHtml::dropDownList('Cabin[ship_id]',null,CHtml::listData(Ship::model()->findAll(),'id','name'),array('empty'=>"Don't care"))))));?>
+<?php 
+    $this->widget('EasyTable', array(
+        'id' => 'cabinlist',
+        'searchable' => true,
+        'dataProvider' => $dataProvider,
+        'columns' => array(
+            array('name'=>'code','template'=>'<a class="editbutton" href="/cabin/view/<=id>" data-id="<=id>"><=code></a>'),
+            array('name'=>'description'),
+            array('name'=>'passengers'),
+            array('name'=>'ship->name','searchtemplate'=>CHtml::dropDownList('Cabin[ship_id]',null,CHtml::listData(Ship::model()->findAll(),'id','name'),array('empty'=>"Don't care")))
+        )
+    ));
+?>
 
 <?php 
     // cs()->registerScript('cabin-index',"
