@@ -15,6 +15,7 @@
     'columns' => array(
         array('name'=>'code','template'=>'<a class="editbutton" href="/cruiseline/view/<=id>" data-id="<=id>"><=code></a>'),
         array('name'=>'name'),
+        array('name'=>'active','searchtemplate'=>CHtml::dropDownList('CruiseLine[active]',null,array(1=>'Show only active',0=>'Dont show active'),array('empty'=>"Don't care"))),
         array('name'=>'url'))));?>
 
 <?php 

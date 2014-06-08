@@ -19,6 +19,10 @@
             <td><?php echo $form->labelEx($model,'url'); ?></td>
             <td><?php echo $form->textField($model,'url',array('size'=>60,'maxlength'=>256)); ?></td>
         </tr>
+        <tr>
+            <td><?php echo $form->labelEx($model,'active'); ?></td>
+            <td><?php echo $form->checkBox($model,'active'); ?></td>
+        </tr>
     </table>
 </div>
 

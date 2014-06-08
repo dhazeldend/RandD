@@ -9,6 +9,7 @@
  * @property string $name
  * @property string $url
  * @property string $modified
+ * @property integer $active
  *
  * The followings are the available model relations:
  * @property Ships[] $ships
@@ -32,12 +33,13 @@ class CruiseLine extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('code, name, url', 'required'),
+			array('active', 'numerical', 'integerOnly'=>true), // Active. Must be TINYINT(1) in MySql
 			array('code', 'length', 'max'=>45),
 			array('name, url', 'length', 'max'=>100),
 			array('modified', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, code, name, url, modified', 'safe', 'on'=>'search'),
+			array('id, code, name, url, modified, active', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -63,6 +65,7 @@ class CruiseLine extends CActiveRecord
 			'code' => 'Code',
 			'name' => 'Name',
 			'url' => 'Url',
+			'active' => 'Active', // Active. Must be TINYINT(1) in MySql
 			'modified' => 'Modified',
 		);
 	}
@@ -90,6 +93,7 @@ class CruiseLine extends CActiveRecord
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('url',$this->url,true);
 		$criteria->compare('modified',$this->modified,true);
+		$criteria->compare('active',$this->active); // Active. Must be TINYINT(1) in MySql
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

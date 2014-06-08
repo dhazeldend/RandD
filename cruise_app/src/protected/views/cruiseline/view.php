@@ -19,6 +19,10 @@
             <td><?php echo CHtml::encode($model->url); ?></td>
         </tr>
         <tr>
+            <td><?php echo CHtml::encode($model->getAttributeLabel('active')); ?>:</td>
+            <td><?php echo CHtml::encode($model->active); ?></td>
+        </tr>
+        <tr>
             <td><?php echo CHtml::encode($model->getAttributeLabel('modified')); ?>:</td>
             <td><?php echo CHtml::encode($model->modified); ?></td>
         </tr>

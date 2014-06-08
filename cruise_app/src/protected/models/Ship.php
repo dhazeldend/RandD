@@ -99,6 +99,11 @@ class Ship extends CActiveRecord
 		$criteria->compare('url',$this->url,true);
 		$criteria->compare('modified',$this->modified,true);
 
+		// only show ships that have their corresponding cruise line active
+		$criteria->with = array('cruise');
+		$criteria->compare('cruise.active',1);
+		$criteria->together = true;
+
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
