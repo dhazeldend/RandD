@@ -97,6 +97,10 @@ class Cabin extends CActiveRecord
 		$criteria->compare('passengers',$this->passengers);
 		$criteria->compare('modified',$this->modified,true);
 
+        $criteria->with = array('ship.cruise');
+        $criteria->compare('cruise.active',1);
+        $criteria->together = true;
+
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
