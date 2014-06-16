@@ -1,3 +1,9 @@
 rsync --delete --exclude 'runtime' -avz ~/Workspace/apps/RandD/cruise_app/ ubuntu@randd.local:~/apps/cruise_app
 
+/* Richard */
+
 rsync --delete --exclude 'runtime' -avz ~/Documents/WorkDocs/RandD/cruise_app/ ubuntu@randd.local:~/apps/cruise
+
+---LIVE
+
+rsync --delete --exclude 'runtime' -avz ~/Documents/WorkDocs/RandD/cruise_app/ ubuntu@ec2-54-187-17-211.us-west-2.compute.amazonaws.com:~/apps/cruise/
