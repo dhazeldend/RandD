@@ -34,7 +34,7 @@ class Route extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('start_port_id, end_port_id, duration, port_of_call, area, url', 'required'),
+			array('start_port_id, end_port_id, duration, port_of_call, area', 'required'),
 			array('start_port_id, end_port_id, duration', 'numerical', 'integerOnly'=>true),
 			array('port_of_call', 'length', 'max'=>500),
 			array('area', 'length', 'max'=>100),
@@ -69,9 +69,9 @@ class Route extends CActiveRecord
 			'id' => 'ID',
 			'start_port_id' => 'Start Port',
 			'end_port_id' => 'End Port',
-			'duration' => 'Duration',
+			'duration' => 'Number of Nights',
 			'port_of_call' => 'Port Of Call',
-			'area' => 'Area',
+			'area' => 'Route',
 			'url' => 'Url',
 			'modified' => 'Modified',
 		);
