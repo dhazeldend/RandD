@@ -7,8 +7,8 @@
 
     <table>
         <tr>
-            <td><?php echo CHtml::encode($model->getAttributeLabel('code')); ?>:</td>
-            <td><?php echo CHtml::encode($model->code); ?></td>
+            <td><?php echo CHtml::encode($model->getAttributeLabel('it_code')); ?>:</td>
+            <td><?php echo CHtml::encode($model->it_code); ?></td>
         </tr>
         <tr>
             <td><?php echo CHtml::encode($model->getAttributeLabel('start_date')); ?>:</td>
@@ -41,7 +41,7 @@
             'searchable' => false,
             'dataProvider' => $pricingDataProvider,
             'columns' => array(
-                array('name'=>'code','template'=>'<a class="editbutton" href="/pricing/view/<=id>" data-id="<=id>"><=code></a>'),
+                array('name'=>'it_code','template'=>'<a class="editbutton" href="/pricing/view/<=id>" data-id="<=id>"><=it_code></a>'),
                 array('name'=>'cabin_fare'),
                 array('name'=>'port_charge'),
                 array('name'=>'service_fee'),
@@ -56,7 +56,7 @@
 <script>
     // Hook up the delete button's click event.
     $('#delete').click(function() {
-        if (confirm('Confirm delete itinerary - <?php echo $model->code; ?>?')) {
+        if (confirm('Confirm delete itinerary - <?php echo $model->it_code; ?>?')) {
             var modal = $(this).closest('.modal');
             $.post('/itinerary/delete/<?php echo $model->id; ?>', modal.modal('hide'));
         }

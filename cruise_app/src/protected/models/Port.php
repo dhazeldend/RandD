@@ -56,8 +56,8 @@ class Port extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'name' => 'Name',
-			'code' => 'Code',
+			'name' => 'Port Name',
+			'code' => 'Port Code',
 			'modified' => 'Modified',
 		);
 	}

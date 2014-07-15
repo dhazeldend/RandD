@@ -67,12 +67,12 @@ class Route extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'start_port_id' => 'Start Port',
-			'end_port_id' => 'End Port',
+			'start_port_id' => 'Route’s Start Port',
+			'end_port_id' => 'Route’s End Port',
 			'duration' => 'Number of Nights',
-			'port_of_call' => 'Port Of Call',
+			'port_of_call' => 'Ports Of Call',
 			'area' => 'Route',
-			'url' => 'Url',
+			'url' => 'Route Info Url',
 			'modified' => 'Modified',
 		);
 	}

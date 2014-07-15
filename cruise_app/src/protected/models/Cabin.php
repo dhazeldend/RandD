@@ -65,9 +65,9 @@ class Cabin extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'ship_id' => 'Ship',
-			'code' => 'Code',
-			'description' => 'Description',
-			'passengers' => 'Passengers',
+			'code' => 'Category code',
+			'description' => 'Category Description',
+			'passengers' => 'Maximum Passengers',
 			'modified' => 'Modified',
 		);
 	}

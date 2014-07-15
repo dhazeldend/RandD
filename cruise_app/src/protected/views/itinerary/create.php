@@ -23,8 +23,8 @@
             <td><?php echo $form->dropDownList($model,'route_id',CHtml::listData(Route::model()->findAll(),'id','area')); ?></td>
         </tr>
         <tr>
-            <td><?php echo $form->labelEx($model,'code'); ?></td>
-            <td><?php echo $form->textField($model,'code',array('maxlength'=>256)); ?></td>
+            <td><?php echo $form->labelEx($model,'it_code'); ?></td>
+            <td><?php echo $form->textField($model,'it_code',array('maxlength'=>256)); ?></td>
         </tr>
         <tr>
             <td><?php echo $form->labelEx($model,'start_date'); ?></td>

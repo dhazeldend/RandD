@@ -1,7 +1,7 @@
 <?php
     $this->menu = array(
         array('label' => 'List cabins', 'url' => array('route' => '/cabin')),
-        array('label' => 'Create a cabin', 'url' => array('route' => '/cabin/create')),
+        array('label' => 'Create a new cabin category', 'url' => array('route' => '/cabin/create')),
     );
 ?>
 

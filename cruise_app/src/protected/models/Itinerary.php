@@ -7,7 +7,7 @@
  * @property integer $id
  * @property integer $ship_id
  * @property integer $route_id
- * @property string $code
+ * @property string $it_code
  * @property string $start_date
  * @property string $end_date
  * @property string $modified
@@ -35,13 +35,13 @@ class Itinerary extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('ship_id, route_id, code, start_date, end_date', 'required'),
+			array('ship_id, route_id, it_code, start_date, end_date', 'required'),
 			array('ship_id, route_id', 'numerical', 'integerOnly'=>true),
-			array('code', 'length', 'max'=>45),
+			array('it_code', 'length', 'max'=>45),
 			array('modified', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, ship_id, route_id, code, start_date, end_date, modified', 'safe', 'on'=>'search'),
+			array('id, ship_id, route_id, it_code, start_date, end_date, modified', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -67,8 +67,8 @@ class Itinerary extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'ship_id' => 'Ship',
-			'route_id' => 'Route',
-			'code' => 'Code',
+			'route_id' => 'Itinerary Route',
+			'it_code' => 'Itinerary ID',
 			'start_date' => 'Start Date',
 			'end_date' => 'End Date',
 			'modified' => 'Modified',
@@ -89,14 +89,14 @@ class Itinerary extends CActiveRecord
 	 */
 	public function search()
 	{
-		// @todo Please modify the following code to remove attributes that should not be searched.
+		// @todo Please modify the following it_code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('ship_id',$this->ship_id);
 		$criteria->compare('route_id',$this->route_id);
-		$criteria->compare('code',$this->code,true);
+		$criteria->compare('it_code',$this->it_code, true);
 		$criteria->compare('start_date', '>' . $this->start_date,true);
 		$criteria->compare('end_date', '<' . $this->end_date,true);
 		$criteria->compare('modified',$this->modified,true);

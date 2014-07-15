@@ -1,7 +1,7 @@
 <?php
     $this->menu = array(
         array('label' => 'List cruise lines', 'url' => array('route' => '/cruiseline')),
-        array('label' => 'Create a cruise lines', 'url' => array('route' => '/cruiseline/create')),
+        array('label' => 'Create a cruise line', 'url' => array('route' => '/cruiseline/create')),
     );
 ?>
 
@@ -15,7 +15,7 @@
     'columns' => array(
         array('name'=>'code','template'=>'<a class="editbutton" href="/cruiseline/view/<=id>" data-id="<=id>"><=code></a>'),
         array('name'=>'name'),
-        array('name'=>'active','searchtemplate'=>CHtml::dropDownList('CruiseLine[active]',null,array(1=>'Show only active',0=>'Dont show active'),array('empty'=>"Don't care"))),
+        array('name'=>'active','template'=>'<span class="active-<=active>"></span>', 'searchtemplate'=>CHtml::dropDownList('CruiseLine[active]',null,array(1=>'Show only active',0=>'Dont show active'),array('empty'=>"Don't care"))),
         array('name'=>'url'))));?>
 
 <?php 

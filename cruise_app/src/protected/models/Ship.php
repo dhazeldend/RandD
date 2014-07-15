@@ -66,10 +66,10 @@ class Ship extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'cruise_id' => 'Cruise',
-			'name' => 'Name',
-			'code' => 'Code',
-			'url' => 'Url',
+			'cruise_id' => 'Cruise Line',
+			'name' => 'Ship’s Name',
+			'code' => 'Ship’s Code',
+			'url' => 'Ship Info URL',
 			'modified' => 'Modified',
 		);
 	}

@@ -64,7 +64,7 @@ class CruiseLine extends CActiveRecord
 			'id' => 'ID',
 			'code' => 'Code',
 			'name' => 'Name',
-			'url' => 'Url',
+			'url' => 'Url of cruise line logo',
 			'active' => 'Active', // Active. Must be TINYINT(1) in MySql
 			'modified' => 'Modified',
 		);

@@ -13,7 +13,7 @@
     'searchable' => true,
     'dataProvider' => $dataProvider,
     'columns' => array(
-        array('name'=>'code','template'=>'<a class="editbutton" href="/itinerary/view/<=id>" data-id="<=id>"><=code></a>'),
+        array('name'=>'it_code','template'=>'<a class="editbutton" href="/itinerary/view/<=id>" data-id="<=id>"><=it_code></a>'),
         array('name'=>'start_date', 'searchtemplate'=>'<input type="text" class="datepicker" name="Itinerary[start_date]">'),
         array('name'=>'end_date', 'searchtemplate'=>'<input type="text" class="datepicker" name="Itinerary[end_date]">'),
         array('name'=>'ship->name','searchtemplate'=>CHtml::dropDownList('Itinerary[ship_id]',null,CHtml::listData(Ship::model()->findAll(),'id','name'),array('empty'=>"Don't care"))),

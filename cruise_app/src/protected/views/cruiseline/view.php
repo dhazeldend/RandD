@@ -20,7 +20,7 @@
         </tr>
         <tr>
             <td><?php echo CHtml::encode($model->getAttributeLabel('active')); ?>:</td>
-            <td><?php echo CHtml::encode($model->active); ?></td>
+            <td><span class="active-<?php echo CHtml::encode($model->active); ?>"></span></td>
         </tr>
         <tr>
             <td><?php echo CHtml::encode($model->getAttributeLabel('modified')); ?>:</td>

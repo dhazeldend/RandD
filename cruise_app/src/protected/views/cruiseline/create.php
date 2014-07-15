@@ -1,6 +1,6 @@
 <?php
     $this->menu = array(
-        array('label' => 'List cruise lines', 'url' => array('route' => '/cruiseline')),
+        array('label' => 'List cruise line', 'url' => array('route' => '/cruiseline')),
         array('label' => 'Create a cruise lines', 'url' => array('route' => '/cruiseline/create')),
     );
 ?>
