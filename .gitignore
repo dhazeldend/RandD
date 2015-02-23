@@ -1,0 +1,25 @@
+# OS & Generic
+.DS_Store
+*.swp
+.tags
+*.sublime-project
+
+# Python 
+*.egg-info
+*.pyc
+
+# Fabric
+/backup
+
+# Sublime
+/support/webapps.sublime-workspace
+nbproject
+
+# npm
+/node_modules
+npm-debug.log
+
+#intelliJ & PhpStorm
+.idea/
+
+/inv/*
